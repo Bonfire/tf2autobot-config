@@ -1,20 +1,5 @@
 # tf2autobot-config
 
-## Build Setup
+A simple config generator for [TF2Autobot](https://github.com/TF2Autobot/tf2autobot)
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+**Currently in active development. Access [here](https://bonfire.github.io/tf2autobot-config/)**
