@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tf2autobot-config',
+    title: 'TF2Autobot Config',
     htmlAttrs: {
       lang: 'en',
     },
