@@ -3,7 +3,7 @@ export default {
   target: 'static',
 
   router: {
-    base: '/<repository-name>/',
+    base: '/tf2autobot-config/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
