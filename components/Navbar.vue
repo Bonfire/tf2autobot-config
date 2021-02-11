@@ -3,10 +3,10 @@
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
           <button
             class="inline-flex items-center justify-center p-2 rounded-md text-blue-400 hover:text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-expanded="false"
+            @click="toggle"
           >
             <span class="sr-only">Open main menu</span>
             <!-- Icon when menu is closed. -->
@@ -84,17 +84,17 @@
 
     Menu open: "block", Menu closed: "hidden"
   -->
-    <div class="hidden sm:hidden">
+    <div :class="open ? 'block' : 'hidden'">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <a
           href="#"
           class="bg-blue-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          >Generate</a
+          >Home</a
         >
         <a
-          href="#"
-          class="text-gray-100 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >Team</a
+          href="generate"
+          class="text-blue-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >Generate</a
         >
       </div>
     </div>
@@ -103,6 +103,15 @@
 
 <script>
 export default {
-  head() {},
+  data() {
+    return {
+      open: false,
+    }
+  },
+  methods: {
+    toggle() {
+      this.open = !this.open
+    },
+  },
 }
 </script>
