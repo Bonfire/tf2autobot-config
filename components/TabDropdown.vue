@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap" v-if="enableComponent">
-    <div class="w-full px-8 mb-2">
+    <div class="w-full px-8">
       <div class="relative text-left inline-flex">
         <span class="text-md font-semibold text-gray-700 w-auto mt-px"
           >{{ label }}:</span

@@ -135,6 +135,7 @@
                   id="playCustomGameInput"
                   label="Custom game name"
                   listenName="playTF2Change"
+                  level="1"
                 />
               </div>
             </div>
