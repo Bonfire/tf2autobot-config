@@ -20,7 +20,7 @@
               class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
             >
               <span class="block xl:inline">Welcome to</span>
-              <span class="block text-green-500 xl:inline"
+              <span class="block text-gray-700 xl:inline"
                 >TF2Autobot Config</span
               >
             </h1>
@@ -38,7 +38,7 @@
               <div class="rounded-md shadow">
                 <NuxtLink
                   to="/generate"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-700 hover:bg-gray-900 md:py-4 md:text-lg md:px-10"
                 >
                   Get started
                 </NuxtLink>
@@ -54,5 +54,5 @@
 <script>
 export default {
   head() {},
-}
+};
 </script>
