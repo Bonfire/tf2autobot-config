@@ -1,5 +1,5 @@
 <template>
-  <div v-if="enableComponent">
+  <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 8 : ''">
     <label class="inline-flex items-center cursor-pointer"
       ><input
         v-bind:id="id"
@@ -8,7 +8,7 @@
         style="transition: all 0.15s ease 0s"
         @change="checkboxChanged()"
       /><span class="ml-2 text-md font-semibold text-gray-700">{{
-        text
+        label
       }}</span></label
     >
   </div>
@@ -16,11 +16,11 @@
 
 <script>
 export default {
-  props: ['id', 'text', 'emitName', 'listenName', 'visbility'],
+  props: ['id', 'label', 'emitName', 'listenName', 'hide', 'level'],
 
   data() {
     return {
-      enableComponent: !this.visbility ? true : false,
+      enableComponent: !this.hide ? true : false,
     };
   },
 

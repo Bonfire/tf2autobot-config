@@ -63,10 +63,10 @@
               />
 
               <div class="flex flex-wrap flex-col">
-                <TabCheckbox id="showOnlyMetalCheck" text="Show only metal" />
+                <TabCheckbox id="showOnlyMetalCheck" label="Show only metal" />
                 <TabCheckbox
                   id="sortInventoryCheck"
-                  text="Sort inventory"
+                  label="Sort inventory"
                   emitName="sortInventoryChange"
                 />
                 <TabDropdown
@@ -84,13 +84,29 @@
                     { name: 'Slot', value: 102 },
                   ]"
                 />
-                <TabCheckbox id="createListingsCheck" text="Create listings" />
-                <TabCheckbox id="addAsFriendCheck" text="Add as a friend" />
+                <TabCheckbox id="createListingsCheck" label="Create listings" />
+                <TabCheckbox id="addAsFriendCheck" label="Add as a friend" />
                 <TabCheckbox
                   id="sendGroupInviteCheck"
-                  text="Send group invite"
+                  label="Send group invite"
                 />
-                <TabCheckbox id="autobumpCheck" text="Autobump (auto-relist)" />
+                <TabCheckbox
+                  id="autobumpCheck"
+                  label="Autobump (auto-relist)"
+                />
+                <TabCheckbox id="skipItemsCheck" label="Skip items in trade" />
+                <TabCheckbox
+                  id="wepsCurrencyCheck"
+                  label="Weapons as currency"
+                  emitName="wepsCurrencyChange"
+                />
+                <TabCheckbox
+                  id="wepsCurrencyUncraftCheck"
+                  label="Include uncraftable weapons"
+                  listenName="wepsCurrencyChange"
+                  hide="true"
+                  level="1"
+                />
               </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->
