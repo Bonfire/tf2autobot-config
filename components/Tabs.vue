@@ -82,6 +82,7 @@
                 <TabCheckbox id="addAsFriendCheck" text="Add as a friend" />
               </div>
             </div>
+            <!-- TODO: Make these class bindings "smarter" -->
             <div
               v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
             ></div>
@@ -99,20 +100,20 @@
 </template>
 
 <script>
-import TabNumeric from './TabNumeric.vue'
+import TabNumeric from './TabNumeric.vue';
 export default {
   components: { TabNumeric },
   data() {
     return {
       openTab: 1,
-    }
+    };
   },
   methods: {
     toggleTabs: function (tabNumber) {
-      this.openTab = tabNumber
+      this.openTab = tabNumber;
     },
   },
-}
+};
 </script>
 
 <style lang="postcss">
