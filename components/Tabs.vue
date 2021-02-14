@@ -73,7 +73,7 @@
                   id="sortInventoryDropdown"
                   text="Sorting type"
                   listenName="sortInventoryChange"
-                  defaultEnable="false"
+                  visibility="false"
                   :options="[
                     { name: 'Name', value: 1 },
                     { name: 'Defindex', value: 2 },

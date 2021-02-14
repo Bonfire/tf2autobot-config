@@ -16,11 +16,11 @@
 
 <script>
 export default {
-  props: ['id', 'text', 'emitName', 'listenName', 'defaultEnable'],
+  props: ['id', 'text', 'emitName', 'listenName', 'visbility'],
 
   data() {
     return {
-      enableComponent: !this.defaultEnable ? true : false,
+      enableComponent: !this.visbility ? true : false,
     };
   },
 
