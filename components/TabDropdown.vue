@@ -1,8 +1,7 @@
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap" v-if="enableComponent">
     <div class="w-full px-8 mb-2">
       <div class="relative inline-block text-left">
-        <!-- TODO: Only enable this when the parent checkbox is enabled -->
         <button
           class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
           style="transition: all 0.15s ease"
@@ -62,12 +61,13 @@
 import Popper from 'popper.js';
 
 export default {
-  props: ['options', 'text', 'id'],
+  props: ['options', 'text', 'id', 'listenName'],
   data() {
     return {
       dropdownPopoverShow: false,
       dropdownSelectedValue: -1,
       dropdownSelectedKey: this.text,
+      enableComponent: false,
     };
   },
   methods: {
@@ -81,6 +81,11 @@ export default {
         });
       }
     },
+  },
+  mounted() {
+    this.$root.$on(this.listenName, () => {
+      this.enableComponent = !this.enableComponent;
+    });
   },
 };
 </script>

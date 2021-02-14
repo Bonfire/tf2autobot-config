@@ -64,10 +64,15 @@
 
               <div class="flex flex-wrap flex-col">
                 <TabCheckbox id="showOnlyMetalCheck" text="Show only metal" />
-                <TabCheckbox id="sortInventoryCheck" text="Sort inventory" />
+                <TabCheckbox
+                  id="sortInventoryCheck"
+                  text="Sort inventory"
+                  emitName="sortInventoryChange"
+                />
                 <TabDropdown
                   id="sortInventoryDropdown"
                   text="Sorting type"
+                  listenName="sortInventoryChange"
                   :options="[
                     { name: 'Name', value: 1 },
                     { name: 'Defindex', value: 2 },
