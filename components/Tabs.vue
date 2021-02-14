@@ -85,6 +85,11 @@
                 />
                 <TabCheckbox id="createListingsCheck" text="Create listings" />
                 <TabCheckbox id="addAsFriendCheck" text="Add as a friend" />
+                <TabCheckbox
+                  id="sendGroupInviteCheck"
+                  text="Send group invite"
+                />
+                <TabCheckbox id="autobumpCheck" text="Autobump (auto-relist)" />
               </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->

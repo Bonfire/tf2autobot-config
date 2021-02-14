@@ -26,7 +26,9 @@ export default {
 
   methods: {
     checkboxChanged: function () {
-      this.$root.$emit(this.emitName);
+      if (this.emitName) {
+        this.$root.$emit(this.emitName);
+      }
     },
   },
 
