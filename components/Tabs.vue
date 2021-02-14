@@ -71,9 +71,9 @@
                 />
                 <TabDropdown
                   id="sortInventoryDropdown"
-                  text="Sorting type"
+                  label="Sorting type"
                   listenName="sortInventoryChange"
-                  visibility="false"
+                  hide="true"
                   :options="[
                     { name: 'Name', value: 1 },
                     { name: 'Defindex', value: 2 },
@@ -93,7 +93,7 @@
                 <TabCheckbox id="autobumpCheck" text="Autobump (auto-relist)" />
                 <TabDropdown
                   id="sortInventoryDropdown"
-                  text="Sorting type"
+                  label="Testing lolz"
                   :options="[
                     { name: 'Name', value: 1 },
                     { name: 'Defindex', value: 2 },

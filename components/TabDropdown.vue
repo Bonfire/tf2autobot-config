@@ -2,6 +2,7 @@
   <div class="flex flex-wrap" v-if="enableComponent">
     <div class="w-full px-8 mb-2">
       <div class="relative inline-block text-left">
+        <span class="text-md font-semibold text-gray-700">{{ label }}</span>
         <button
           class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
           style="transition: all 0.15s ease"
@@ -9,6 +10,7 @@
           v-on:click="toggleDropdown()"
           ref="btnDropdownRef"
           :id="id"
+          :placeholder="label"
         >
           {{ dropdownSelectedKey }}
           <svg
@@ -61,13 +63,13 @@
 import Popper from 'popper.js';
 
 export default {
-  props: ['options', 'text', 'id', 'listenName', 'visbility'],
+  props: ['options', 'id', 'listenName', 'label', 'hide'],
   data() {
     return {
       dropdownPopoverShow: false,
       dropdownSelectedValue: -1,
-      dropdownSelectedKey: this.text,
-      enableComponent: !this.visbility ? true : false,
+      dropdownSelectedKey: '...',
+      enableComponent: !this.hide ? true : false,
     };
   },
   methods: {
