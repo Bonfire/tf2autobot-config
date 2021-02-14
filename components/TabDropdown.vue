@@ -9,6 +9,7 @@
           type="button"
           v-on:click="toggleDropdown()"
           ref="btnDropdownRef"
+          :id="id"
         >
           {{ dropdownSelectedKey }}
           <svg
@@ -61,12 +62,12 @@
 import Popper from 'popper.js';
 
 export default {
-  props: ['options'],
+  props: ['options', 'text', 'id'],
   data() {
     return {
       dropdownPopoverShow: false,
-      dropdownSelectedValue: 3,
-      dropdownSelectedKey: 'Rarity',
+      dropdownSelectedValue: -1,
+      dropdownSelectedKey: this.text,
     };
   },
   methods: {
