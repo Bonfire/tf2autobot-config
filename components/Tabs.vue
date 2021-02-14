@@ -107,6 +107,35 @@
                   hide="true"
                   level="1"
                 />
+                <TabCheckbox
+                  id="fullUsesCheck"
+                  label="Full uses check"
+                  emitName="fullUsesChange"
+                />
+                <TabCheckbox
+                  id="fullUsesDuelCheck"
+                  label="Dueling minigame"
+                  listenName="fullUsesChange"
+                  level="1"
+                  hide="true"
+                />
+                <TabCheckbox
+                  id="fullUsesNoiseCheck"
+                  label="Noise maker"
+                  listenName="fullUsesChange"
+                  level="1"
+                  hide="true"
+                />
+                <TabCheckbox
+                  id="playOnlyTF2Check"
+                  label="Display TF2 as running game"
+                  emitName="playTF2Change"
+                />
+                <TabInput
+                  id="playCustomGameInput"
+                  label="Custom game name"
+                  listenName="playTF2Change"
+                />
               </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->
