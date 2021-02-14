@@ -61,13 +61,13 @@
 import Popper from 'popper.js';
 
 export default {
-  props: ['options', 'text', 'id', 'listenName'],
+  props: ['options', 'text', 'id', 'listenName', 'defaultEnable'],
   data() {
     return {
       dropdownPopoverShow: false,
       dropdownSelectedValue: -1,
       dropdownSelectedKey: this.text,
-      enableComponent: false,
+      enableComponent: !this.defaultEnable ? true : false,
     };
   },
   methods: {

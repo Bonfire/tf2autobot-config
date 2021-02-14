@@ -73,6 +73,7 @@
                   id="sortInventoryDropdown"
                   text="Sorting type"
                   listenName="sortInventoryChange"
+                  defaultEnable="false"
                   :options="[
                     { name: 'Name', value: 1 },
                     { name: 'Defindex', value: 2 },
@@ -90,6 +91,19 @@
                   text="Send group invite"
                 />
                 <TabCheckbox id="autobumpCheck" text="Autobump (auto-relist)" />
+                <TabDropdown
+                  id="sortInventoryDropdown"
+                  text="Sorting type"
+                  :options="[
+                    { name: 'Name', value: 1 },
+                    { name: 'Defindex', value: 2 },
+                    { name: 'Rarity', value: 3 },
+                    { name: 'Type', value: 4 },
+                    { name: 'Date', value: 5 },
+                    { name: 'Class', value: 101 },
+                    { name: 'Slot', value: 102 },
+                  ]"
+                />
               </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->
