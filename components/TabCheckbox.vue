@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="enableComponent">
     <label class="inline-flex items-center cursor-pointer"
       ><input
         v-bind:id="id"
@@ -16,12 +16,24 @@
 
 <script>
 export default {
-  props: ['id', 'text', 'emitName'],
+  props: ['id', 'text', 'emitName', 'listenName', 'defaultEnable'],
+
+  data() {
+    return {
+      enableComponent: !this.defaultEnable ? true : false,
+    };
+  },
 
   methods: {
     checkboxChanged: function () {
       this.$root.$emit(this.emitName);
     },
+  },
+
+  mounted() {
+    this.$root.$on(this.listenName, () => {
+      this.enableComponent = !this.enableComponent;
+    });
   },
 };
 </script>
