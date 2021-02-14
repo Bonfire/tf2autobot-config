@@ -26,30 +26,6 @@
             Alerts
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a
-            class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal"
-            v-on:click="toggleTabs(3)"
-            v-bind:class="{
-              'tab-inactive': openTab !== 3,
-              'tab-active': openTab === 3,
-            }"
-          >
-            Pricelist
-          </a>
-        </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a
-            class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal"
-            v-on:click="toggleTabs(4)"
-            v-bind:class="{
-              'tab-inactive': openTab !== 4,
-              'tab-active': openTab === 4,
-            }"
-          >
-            Exceptions
-          </a>
-        </li>
       </ul>
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
@@ -153,12 +129,6 @@
             <div
               v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
             ></div>
-            <div
-              v-bind:class="{ hidden: openTab !== 3, block: openTab === 3 }"
-            ></div>
-            <div
-              v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }"
-            ></div>
           </div>
         </div>
       </div>
@@ -167,9 +137,7 @@
 </template>
 
 <script>
-import TabNumeric from './TabNumeric.vue';
 export default {
-  components: { TabNumeric },
   data() {
     return {
       openTab: 1,
