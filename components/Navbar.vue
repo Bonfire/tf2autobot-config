@@ -34,17 +34,6 @@
 <script>
 export default {
   props: ['pageName'],
-
-  data() {
-    return {
-      showMenu: false,
-    }
-  },
-  methods: {
-    toggleMenu: function () {
-      this.showMenu = !this.showMenu
-    },
-  },
 }
 </script>
 

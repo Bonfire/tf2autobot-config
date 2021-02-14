@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",
