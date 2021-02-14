@@ -57,11 +57,10 @@
         <div class="px-4 py-5 flex-auto">
           <div class="tab-content tab-space">
             <div v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }">
-              <TabHeading
+              <SectionHeading
                 title="General Settings"
                 description="These settings determine general bot functionality"
               />
-
               <div class="flex flex-wrap flex-col">
                 <TabCheckbox id="showOnlyMetalCheck" label="Show only metal" />
                 <TabCheckbox
@@ -136,6 +135,17 @@
                   label="Custom game name"
                   listenName="playTF2Change"
                   level="1"
+                />
+              </div>
+              <SectionHeading
+                title="Alert Settings"
+                description="These settings provide alerts to the owner in the case of errors or high-value items"
+              />
+              <div class="flex flex-wrap flex-col">
+                <TabCheckbox
+                  id="sendAlertsCheck"
+                  label="Send alerts"
+                  emitName="sendAlertsChange"
                 />
               </div>
             </div>

@@ -3,7 +3,7 @@
     <h2 class="text-lg leading-6 font-medium text-gray-900">
       {{ title }}
     </h2>
-    <h4 class="mt-1 max-w-2xl text-sm text-gray-500">
+    <h4 class="mt-1 max-w-2xl text-sm text-gray-600">
       {{ description }}
     </h4>
   </div>
@@ -12,5 +12,5 @@
 <script>
 export default {
   props: ['title', 'description'],
-}
+};
 </script>
