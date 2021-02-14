@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar pageName="Home" />
     <Hero />
   </div>
 </template>
