@@ -38,6 +38,30 @@
             Utility
           </a>
         </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
+            v-on:click="toggleTabs(4)"
+            v-bind:class="{
+              'tab-inactive': openTab !== 4,
+              'tab-active': openTab === 4,
+            }"
+          >
+            Offer
+          </a>
+        </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
+            v-on:click="toggleTabs(5)"
+            v-bind:class="{
+              'tab-inactive': openTab !== 5,
+              'tab-active': openTab === 5,
+            }"
+          >
+            Discord
+          </a>
+        </li>
       </ul>
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
@@ -387,7 +411,7 @@
                   label="Listing sell note"
                   placeholder="I am selling my %name% for %price%, I am selling %amount_trade%."
                 />
-                <SectionSubHeading title="High-Value Item Details" />
+                <SectionSubHeading title="High-Value Item Parameters" />
                 <Checkbox
                   id="showSpellsCheck"
                   label="Show spells in listing notes"
@@ -408,8 +432,25 @@
                   id="showPaintedCheck"
                   label="Show paint in listing notes"
                 />
+                <SectionSubHeading title="Custom Uses Parameters" />
+                <Input
+                  id="listingUsesDuelInput"
+                  label="Custom uses parameter for dueling minigames"
+                  placeholder="(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟱x 𝗨𝗦𝗘𝗦)"
+                />
+                <Input
+                  id="listingUsesNoiseInput"
+                  label="Custom uses parameter for noise makers"
+                  placeholder="(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦)"
+                />
               </div>
             </div>
+            <div
+              v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }"
+            ></div>
+            <div
+              v-bind:class="{ hidden: openTab !== 5, block: openTab === 5 }"
+            ></div>
           </div>
         </div>
       </div>
