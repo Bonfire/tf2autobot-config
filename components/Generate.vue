@@ -212,7 +212,7 @@
                 />
                 <Checkbox
                   id="addPaintedItemsCheck"
-                  label="Painted item auto-add for sell alert"
+                  label="Failed to auto-add painted item alert"
                   listenName="sendAlertsChange"
                   level="1"
                   hide="true"
