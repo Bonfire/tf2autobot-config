@@ -239,7 +239,12 @@
                   id="addPaintedItemsCheck"
                   label="Auto-add painted items"
                 />
-                <Input id="priceAgeInput" label="Price age" level="1" />
+                <Numeric
+                  id="priceAgeNumeric"
+                  label="Price age (ms)"
+                  level="1"
+                  step="100"
+                />
               </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->
@@ -316,6 +321,57 @@
                   id="highValuePaintsInput"
                   label="High-value paints"
                   placeholder="After Eight"
+                />
+              </div>
+              <SectionHeading
+                title="Item Normalization Settings"
+                description="These settings determine when an item's attributes should and shouldn't affect a trade"
+              />
+              <div class="flex flex-wrap flex-col">
+                <SectionSubHeading title="Festivized Items" />
+                <Checkbox
+                  id="ourFestivizedCheck"
+                  label="Recognize our Festivized items as their non-Festivized variants"
+                />
+                <Checkbox
+                  id="theirFestivizedCheck"
+                  label="Recognize our partner's Festivized items as their non-Festivized variants"
+                />
+                <SectionSubHeading
+                  title="Strange As Second Quality (Elevated Quality) Items"
+                />
+                <Checkbox
+                  id="ourStrangeSecondQualityCheck"
+                  label="Recognize our items with Strange as a second quality as their non-Strange variants"
+                />
+                <Checkbox
+                  id="theirStrangeSecondQualityCheck"
+                  label="Recognize our partner's items with Strange as a second quality as their non-Strange variants"
+                />
+                <SectionSubHeading title="Painted Items" />
+                <Checkbox
+                  id="ourPaintedCheck"
+                  label="Recognize our painted items as their non-painted variants"
+                />
+                <Checkbox
+                  id="theirPaintedCheck"
+                  label="Recognize our partner's painted items as their non-painted variants"
+                />
+              </div>
+              <SectionHeading
+                title="Listing Note Settings"
+                description="These settings determine what buying and selling listing notes should display"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Input
+                  id="listingBuyDetailsInput"
+                  label="Listing buy note"
+                  placeholder="I am buying your %name% for %price%, I have %current_stock% / %max_stock%."
+                />
+                <Input
+                  id="listingSellDetailsInput"
+                  label="Listing sell note"
+                  placeholder="I am selling my %name% for %price%, I am selling %amount_trade%."
                 />
               </div>
             </div>
