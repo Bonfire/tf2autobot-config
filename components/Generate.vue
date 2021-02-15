@@ -235,7 +235,7 @@
                 />
                 <Checkbox
                   id="removeSellFailedCheck"
-                  label="Auto-remove failed for item with intent sell alert"
+                  label="Failed to auto-remove item with intent sell alert"
                   listenName="sendAlertsChange"
                   level="1"
                   hide="true"
