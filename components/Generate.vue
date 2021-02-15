@@ -290,7 +290,7 @@
               </div>
               <SectionHeading
                 title="High-Value Item Settings"
-                description="These settings determine what is considered a High-Value Item and what should be done with High-Value Items"
+                description="These settings determine what is considered a High-Value Item and what should be done when receiving a High-Value Item"
               />
               <div class="flex flex-wrap flex-col">
                 <Checkbox
