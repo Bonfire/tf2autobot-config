@@ -266,6 +266,58 @@
                   label="Allow trades from banned/scammer accounts"
                 />
               </div>
+              <SectionHeading
+                title="Trade Summary Settings"
+                description="These settings determine what trade summaries should look like"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="showStockChangesCheck"
+                  label="Show item stock changes in trade summary"
+                />
+                <Checkbox
+                  id="showTimeTakenCheck"
+                  label="Show trade time taken in trade summary"
+                />
+                <Checkbox
+                  id="showItemPricesCheck"
+                  label="Show item prices in trade summary"
+                />
+                <Checkbox
+                  id="showPureEmojiCheck"
+                  label="Show pure using emojis in trade summary"
+                />
+              </div>
+              <SectionHeading
+                title="High-Value Item Settings"
+                description="These settings determine what is considered a High-Value Item and what should be done with High-Value Items"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="highValueHoldCheck"
+                  label="Temporarily disable (hold) high-value items"
+                />
+                <Input
+                  id="highValueSheensInput"
+                  label="High-Value Sheens"
+                  placeholder="Team Shine"
+                />
+                <Input
+                  id="highValueKSInput"
+                  label="High-Value Killstreakers"
+                  placeholder="Tornado, Fire Horns"
+                />
+                <Input
+                  id="highValuePartsInput"
+                  label="High-Value Strange Parts"
+                  placeholder="Headshot Kills, Kills"
+                />
+                <Input
+                  id="highValuePaintsInput"
+                  label="High-Value Paints"
+                  placeholder="After Eight"
+                />
+              </div>
             </div>
           </div>
         </div>
