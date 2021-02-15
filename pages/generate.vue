@@ -1,10 +1,10 @@
 <template>
   <div>
     <Navbar pageName="Generate" />
-    <Tabs />
+    <Generate />
   </div>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>

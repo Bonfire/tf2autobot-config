@@ -38,13 +38,13 @@
                 description="These settings determine general bot functionality"
               />
               <div class="flex flex-wrap flex-col">
-                <TabCheckbox id="showOnlyMetalCheck" label="Show only metal" />
-                <TabCheckbox
+                <Checkbox id="showOnlyMetalCheck" label="Show only metal" />
+                <Checkbox
                   id="sortInventoryCheck"
                   label="Sort inventory"
                   emitName="sortInventoryChange"
                 />
-                <TabDropdown
+                <Dropdown
                   id="sortInventoryDropdown"
                   label="Sorting type"
                   listenName="sortInventoryChange"
@@ -59,54 +59,48 @@
                     { name: 'Slot', value: 102 },
                   ]"
                 />
-                <TabCheckbox id="createListingsCheck" label="Create listings" />
-                <TabCheckbox id="addAsFriendCheck" label="Add as a friend" />
-                <TabCheckbox
-                  id="sendGroupInviteCheck"
-                  label="Send group invite"
-                />
-                <TabCheckbox
-                  id="autobumpCheck"
-                  label="Autobump (auto-relist)"
-                />
-                <TabCheckbox id="skipItemsCheck" label="Skip items in trade" />
-                <TabCheckbox
+                <Checkbox id="createListingsCheck" label="Create listings" />
+                <Checkbox id="addAsFriendCheck" label="Add as a friend" />
+                <Checkbox id="sendGroupInviteCheck" label="Send group invite" />
+                <Checkbox id="autobumpCheck" label="Autobump (auto-relist)" />
+                <Checkbox id="skipItemsCheck" label="Skip items in trade" />
+                <Checkbox
                   id="wepsCurrencyCheck"
                   label="Weapons as currency"
                   emitName="wepsCurrencyChange"
                 />
-                <TabCheckbox
+                <Checkbox
                   id="wepsCurrencyUncraftCheck"
                   label="Include uncraftable weapons"
                   listenName="wepsCurrencyChange"
                   hide="true"
                   level="1"
                 />
-                <TabCheckbox
+                <Checkbox
                   id="fullUsesCheck"
                   label="Full uses check"
                   emitName="fullUsesChange"
                 />
-                <TabCheckbox
+                <Checkbox
                   id="fullUsesDuelCheck"
                   label="Dueling minigame"
                   listenName="fullUsesChange"
                   level="1"
                   hide="true"
                 />
-                <TabCheckbox
+                <Checkbox
                   id="fullUsesNoiseCheck"
                   label="Noise maker"
                   listenName="fullUsesChange"
                   level="1"
                   hide="true"
                 />
-                <TabCheckbox
+                <Checkbox
                   id="playOnlyTF2Check"
                   label="Display TF2 as running game"
                   emitName="playTF2Change"
                 />
-                <TabInput
+                <Input
                   id="playCustomGameInput"
                   label="Custom game name"
                   listenName="playTF2Change"
@@ -118,7 +112,7 @@
                 description="These settings provide alerts to the owner in the case of errors or high-value items"
               />
               <div class="flex flex-wrap flex-col">
-                <TabCheckbox
+                <Checkbox
                   id="sendAlertsCheck"
                   label="Send alerts"
                   emitName="sendAlertsChange"
