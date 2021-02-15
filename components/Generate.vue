@@ -109,13 +109,113 @@
               </div>
               <SectionHeading
                 title="Alert Settings"
-                description="These settings provide alerts to the owner in the case of errors or high-value items"
+                description="These settings determine which alerts to the owner (and admins) in the case of errors or high-value items"
               />
               <div class="flex flex-wrap flex-col">
                 <Checkbox
                   id="sendAlertsCheck"
                   label="Send alerts"
                   emitName="sendAlertsChange"
+                />
+                <SectionSubHeading
+                  title="Autokeys Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="lowPureCheck"
+                  label="Low pure alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="failedToAddCheck"
+                  label="Failed to add key alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="failedToUpdateCheck"
+                  label="Failed to update key alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="failedToDisableCheck"
+                  label="Failed to disable key alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Backpack Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="backpackFullCheck"
+                  label="Backpack full alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="High-Value Items Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="gotDisabledCheck"
+                  label="Item disabled alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="notInPricelistCheck"
+                  label="Item not in pricelist received alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="tryingToTakeCheck"
+                  label="Item not in pricelist requested alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Auto-Remove Failed Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="removeSellFailedCheck"
+                  label="Auto-remove failed for item with intent sell alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Auto-Add Painted Items Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="addPaintedItemsCheck"
+                  label="Auto-add painted items failed alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
                 />
               </div>
             </div>
