@@ -299,22 +299,22 @@
                 />
                 <Input
                   id="highValueSheensInput"
-                  label="High-Value Sheens"
+                  label="High-value sheens"
                   placeholder="Team Shine"
                 />
                 <Input
                   id="highValueKSInput"
-                  label="High-Value Killstreakers"
+                  label="High-value killstreakers"
                   placeholder="Tornado, Fire Horns"
                 />
                 <Input
                   id="highValuePartsInput"
-                  label="High-Value Strange Parts"
+                  label="High-value strange parts"
                   placeholder="Headshot Kills, Kills"
                 />
                 <Input
                   id="highValuePaintsInput"
-                  label="High-Value Paints"
+                  label="High-value paints"
                   placeholder="After Eight"
                 />
               </div>
