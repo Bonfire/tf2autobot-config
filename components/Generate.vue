@@ -26,6 +26,18 @@
             Trade
           </a>
         </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
+            v-on:click="toggleTabs(3)"
+            v-bind:class="{
+              'tab-inactive': openTab !== 3,
+              'tab-active': openTab === 3,
+            }"
+          >
+            Utility
+          </a>
+        </li>
       </ul>
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
@@ -358,6 +370,8 @@
                   label="Recognize our partner's painted items as their non-painted variants"
                 />
               </div>
+            </div>
+            <div v-bind:class="{ hidden: openTab !== 3, block: openTab === 3 }">
               <SectionHeading
                 title="Listing Note Settings"
                 description="These settings determine what buying and selling listing notes should display"
@@ -372,6 +386,27 @@
                   id="listingSellDetailsInput"
                   label="Listing sell note"
                   placeholder="I am selling my %name% for %price%, I am selling %amount_trade%."
+                />
+                <SectionSubHeading title="High-Value Item Details" />
+                <Checkbox
+                  id="showSpellsCheck"
+                  label="Show spells in listing notes"
+                />
+                <Checkbox
+                  id="showStrangePartsCheck"
+                  label="Show strange parts in listing notes"
+                />
+                <Checkbox
+                  id="showKillstreakersCheck"
+                  label="Show killstreakers in listing notes"
+                />
+                <Checkbox
+                  id="showSheensCheck"
+                  label="Show sheens in listing notes"
+                />
+                <Checkbox
+                  id="showPaintedCheck"
+                  label="Show paint in listing notes"
                 />
               </div>
             </div>
