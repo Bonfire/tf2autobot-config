@@ -4,7 +4,7 @@
       <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
         <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
           <a
-            class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal"
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
             v-on:click="toggleTabs(1)"
             v-bind:class="{
               'tab-inactive': openTab !== 1,
@@ -16,14 +16,14 @@
         </li>
         <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
           <a
-            class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal"
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
             v-on:click="toggleTabs(2)"
             v-bind:class="{
               'tab-inactive': openTab !== 2,
               'tab-active': openTab === 2,
             }"
           >
-            Alerts
+            Trade
           </a>
         </li>
       </ul>
@@ -218,11 +218,55 @@
                   hide="true"
                 />
               </div>
+              <SectionHeading
+                title="Pricelist Settings"
+                description="These settings determine how the pricelist should work"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="filterCantAffordCheck"
+                  label="Filter out items the bot can't afford"
+                />
+                <Checkbox
+                  id="removeIntentSellCheck"
+                  label="Auto-remove intent sell"
+                />
+                <Checkbox
+                  id="addInvalidItemsCheck"
+                  label="Auto-add invalid items"
+                />
+                <Checkbox
+                  id="addPaintedItemsCheck"
+                  label="Auto-add painted items"
+                />
+                <Input id="priceAgeInput" label="Price age" level="1" />
+              </div>
             </div>
             <!-- TODO: Make these class bindings "smarter" -->
-            <div
-              v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
-            ></div>
+            <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
+              <SectionHeading
+                title="Trade Exception (Bypass) Settings"
+                description="These settings determine what types of trades should and shouldn't be accepted"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="allowEscrowCheck"
+                  label="Allow trades with escrow (trade hold)"
+                />
+                <Checkbox
+                  id="allowOverpayCheck"
+                  label="Allow trades with item/pure overpay"
+                />
+                <Checkbox
+                  id="allowGiftCheck"
+                  label="Allow trades without gift messages"
+                />
+                <Checkbox
+                  id="allowBannedAccCheck"
+                  label="Allow trades from banned/scammer accounts"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
