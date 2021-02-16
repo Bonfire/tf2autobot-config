@@ -444,6 +444,85 @@
                   placeholder="(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦)"
                 />
               </div>
+              <SectionHeading
+                title="Statistics Settings"
+                description="These settings act mostly as a checkpoint for your bot when you delete your polldata"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Numeric
+                  id="lastTotalTradesNumeric"
+                  label="Last total trades"
+                />
+                <Input
+                  id="startingTimeInput"
+                  label="Starting time (unix timestamp)"
+                  :placeholder="new Date().valueOf()"
+                />
+                <Numeric
+                  id="lastTotalProfitNumeric"
+                  label="Last total profit made (in refined)"
+                />
+                <Numeric
+                  id="lastTotalOverpayNumeric"
+                  label="Last total overpay received (in refined)"
+                />
+                <Numeric
+                  id="profitTimestampNumeric"
+                  label="Time since last profit (unix timestamp)"
+                />
+                <SectionSubHeading title="Sending Stats Automatically" />
+                <Checkbox
+                  id="sendAutomatedStatsCheck"
+                  label="Regularly send trade statistics"
+                  emitName="sendStatsEvent"
+                />
+                <Input
+                  id="sendStatsIntervalInput"
+                  label="Interval to send stats (THH:MM)"
+                  listenName="sendStatsEvent"
+                  hide="true"
+                  level="1"
+                />
+              </div>
+              <SectionHeading
+                title="Autokeys Settings"
+                description="These settings determine how autokeys should function"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="autokeysEnableCheck"
+                  label="Enable autokeys"
+                  emitName="autokeysEvent"
+                />
+                <Numeric
+                  id="autokeysMinKeysNumeric"
+                  label="Minimum number of keys"
+                  level="1"
+                  listenName="autokeysEvent"
+                  hide="true"
+                />
+                <Numeric
+                  id="autokeysMaxKeysNumeric"
+                  label="Maximum number of keys"
+                  level="1"
+                  listenName="autokeysEvent"
+                  hide="true"
+                />
+                <Numeric
+                  id="autokeysMinRefNumeric"
+                  label="Minimum amount of refined"
+                  level="1"
+                  listenName="autokeysEvent"
+                  hide="true"
+                />
+                <Numeric
+                  id="autokeysMaxRefNumeric"
+                  label="Maximum amount of refined"
+                  level="1"
+                  listenName="autokeysEvent"
+                  hide="true"
+                />
+              </div>
             </div>
             <div
               v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }"

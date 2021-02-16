@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="level ? 'ml-' + level * 8 : ''">
+  <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 8 : ''">
     <div class="relative text-left inline-flex w-full">
       <div class="w-full">
         <label :id="id" class="text-md font-semibold text-gray-700 w-auto mt-px"
@@ -19,6 +19,18 @@
 
 <script>
 export default {
-  props: ['id', 'label', 'level', 'step'],
+  props: ['id', 'label', 'level', 'step', 'hide', 'listenName'],
+
+  data() {
+    return {
+      enableComponent: !this.hide ? true : false,
+    };
+  },
+
+  mounted() {
+    this.$root.$on(this.listenName, () => {
+      this.enableComponent = !this.enableComponent;
+    });
+  },
 };
 </script>
