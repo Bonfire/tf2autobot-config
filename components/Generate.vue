@@ -62,6 +62,18 @@
             Discord
           </a>
         </li>
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a
+            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
+            v-on:click="toggleTabs(6)"
+            v-bind:class="{
+              'tab-inactive': openTab !== 6,
+              'tab-active': openTab === 6,
+            }"
+          >
+            Custom
+          </a>
+        </li>
       </ul>
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
@@ -577,6 +589,9 @@
             ></div>
             <div
               v-bind:class="{ hidden: openTab !== 5, block: openTab === 5 }"
+            ></div>
+            <div
+              v-bind:class="{ hidden: openTab !== 6, block: openTab === 6 }"
             ></div>
           </div>
         </div>
