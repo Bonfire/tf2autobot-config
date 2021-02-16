@@ -1,5 +1,5 @@
 <template>
-  <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 8 : ''">
+  <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 4 : ''">
     <label class="inline-flex items-center cursor-pointer"
       ><input
         v-bind:id="id"
