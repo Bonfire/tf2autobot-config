@@ -1,9 +1,10 @@
 <template>
-  <div class="mt-1 mb-1" v-if="enableComponent">
-    <h4
-      class="leading-6 font-medium text-md text-gray-900"
-      v-bind:class="level ? 'ml-' + level * 8 : ''"
-    >
+  <div
+    class="mt-1 mb-1"
+    v-if="enableComponent"
+    v-bind:class="level ? 'ml-' + level * 8 : ''"
+  >
+    <h4 class="leading-6 font-medium text-md text-gray-900">
       {{ title }}
     </h4>
   </div>
