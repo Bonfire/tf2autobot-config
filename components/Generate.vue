@@ -935,73 +935,62 @@
                 />
               </div>
               <SectionHeading
-                title="Webhook Trade Summary Settings"
-                description="These settings determine what trade summaries sent on Discord should look like"
+                title="Webhook Content Settings"
+                description="These settings determine what trade-related messages sent on Discord should look like"
               />
               <div class="flex flex-col">
+                <SectionSubHeading title="Trade Summary Settings" />
                 <Checkbox
-                  id="summaryEnableCheck"
-                  label="Enable discord webhook trade summaries"
-                  emitName="summaryEvent"
+                  id="discordSummaryCheck"
+                  label="Enable discord webhook messages for trade summaries"
+                  emitName="discordSummaryEvent"
                 />
                 <Input
                   id="summaryURLInput"
                   label="Trade summary webhook URL"
-                  listenName="summaryEvent"
-                  level="1"
-                  hide="true"
-                />
-                <SectionSubHeading
-                  title="Misc Trade Summary Settings"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Checkbox
                   id="summaryLinksCheck"
                   label="Show trade partner quick links in summaries"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Checkbox
                   id="summaryKeyRateCheck"
                   label="Show the bot's key rate in summaries"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Checkbox
                   id="summaryPureCheck"
                   label="Show the bot's pure stock in summaries"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Checkbox
                   id="summaryInventoryCheck"
                   label="Show bot's inventory statistics in summaries"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Input
                   id="summaryNoteInput"
                   label="Custom notes that should be included in summaries"
-                  listenName="summaryEvent"
-                  level="1"
-                  hide="true"
-                />
-                <SectionSubHeading
-                  title="Mention Trade Summary Settings"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                 />
                 <Checkbox
                   id="mentionEnableCheck"
                   label="Mention the owner when sending trade summaries"
-                  listenName="summaryEvent"
+                  listenName="discordSummaryEvent"
                   level="1"
                   hide="true"
                   emitName="mentionEvent"
@@ -1018,6 +1007,61 @@
                   label="Mention for any trades higher than this value (in ref)"
                   listenName="mentionEvent"
                   level="2"
+                  hide="true"
+                />
+                <SectionSubHeading title="Trade Offer Review Settings" />
+                <Checkbox
+                  id="discordReviewCheck"
+                  label="Enable discord webhook message for manual reviews"
+                  emitName="discordReviewEvent"
+                />
+                <Input
+                  id="reviewURLInput"
+                  label="Manual review webhook URL"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewInvalidCheck"
+                  label="Mention the owner for invalid value manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewMentionCheck"
+                  label="Mention the owner for general manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewLinksCheck"
+                  label="Show trade partner quick links in manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewKeyRateCheck"
+                  label="Show the bot's key rate in manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewPureCheck"
+                  label="Show the bot's pure stock in manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewInventoryCheck"
+                  label="Show bot's inventory statistics in manual reviews"
+                  listenName="discordReviewEvent"
+                  level="1"
                   hide="true"
                 />
               </div>
