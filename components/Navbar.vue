@@ -34,7 +34,7 @@
 <script>
 export default {
   props: ['pageName'],
-}
+};
 </script>
 
 <style lang="postcss">
