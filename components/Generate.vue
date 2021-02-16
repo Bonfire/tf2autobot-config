@@ -623,7 +623,7 @@
             </div>
             <div v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }">
               <SectionHeading
-                title="Received Offer Filters"
+                title="Received Offer Filter Settings"
                 description="These settings determine what types of offers should and shouldn't be accepted"
               />
               <div class="flex flex-wrap flex-col">
@@ -759,6 +759,163 @@
                 <Checkbox
                   id="bannedFailCheck"
                   label="Ignore banned check failures"
+                />
+              </div>
+              <SectionHeading
+                title="Manual Review Settings"
+                description="These settings determine when manual reviews should be created and what information they should provide"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="reviewCheck"
+                  label="Enable manual trade reviews"
+                  emitName="reviewEvent"
+                />
+                <SectionSubHeading
+                  title="Manual Review General Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewSummaryCheck"
+                  label="Show trade summaries for offers held in review to the trade partner"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewNoteCheck"
+                  label="Show hold reasons for offers held in review"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewTimeCheck"
+                  label="Show the owner's current time to the trade partner when a trade is held for review"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="reviewPriceCheck"
+                  label="Show the prices of items that are held for review"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Invalid Value Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewValueNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to invalid value"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Invalid Items Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewItemsNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to invalid items"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Disabled Items Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewDisabledNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to disabled items"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Overstocked Items Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewOverstockedNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to overstocked items"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Understocked Items Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewUnderstockedNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to understocked items"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Duped Items Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewDupedNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to duped items"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Other Review Settings"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewDupeFailNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to a dupe check failure"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewEscrowNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to an escrow check failure"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewBanNoteInput"
+                  label="Note provided to the trade partner when a trade is held due to a banned check failure"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="reviewCustomNoteInput"
+                  label="Custom note provided to the trade partner for all manual review holds"
+                  listenName="reviewEvent"
+                  level="1"
+                  hide="true"
                 />
               </div>
             </div>
