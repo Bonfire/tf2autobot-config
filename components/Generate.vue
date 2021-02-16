@@ -283,7 +283,6 @@
                 />
               </div>
             </div>
-            <!-- TODO: Make these class bindings "smarter" -->
             <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
               <SectionHeading
                 title="Trade Exception (Bypass) Settings"
@@ -1109,6 +1108,17 @@
             </div>
           </div>
         </div>
+      </div>
+      <hr />
+      <br />
+      <div
+        class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
+      >
+        <button
+          class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+        >
+          Generate Options (TODO)
+        </button>
       </div>
     </div>
   </div>
