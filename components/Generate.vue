@@ -62,18 +62,6 @@
             Discord
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a
-            class="text-sm font-bold px-5 py-3 rounded block leading-normal"
-            v-on:click="toggleTabs(6)"
-            v-bind:class="{
-              'tab-inactive': openTab !== 6,
-              'tab-active': openTab === 6,
-            }"
-          >
-            Custom
-          </a>
-        </li>
       </ul>
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
@@ -980,13 +968,6 @@
                   level="1"
                   hide="true"
                 />
-                <Input
-                  id="summaryNoteInput"
-                  label="Custom notes that should be included in summaries"
-                  listenName="discordSummaryEvent"
-                  level="1"
-                  hide="true"
-                />
                 <Checkbox
                   id="mentionEnableCheck"
                   label="Mention the owner when sending trade summaries"
@@ -1007,6 +988,13 @@
                   label="Mention for any trades higher than this value (in ref)"
                   listenName="mentionEvent"
                   level="2"
+                  hide="true"
+                />
+                <Input
+                  id="summaryNoteInput"
+                  label="Custom notes that should be included in summaries"
+                  listenName="discordSummaryEvent"
+                  level="1"
                   hide="true"
                 />
                 <SectionSubHeading title="Trade Offer Review Settings" />
@@ -1064,11 +1052,61 @@
                   level="1"
                   hide="true"
                 />
+                <SectionSubHeading title="Price Update Settings" />
+                <Checkbox
+                  id="priceUpdateCheck"
+                  label="Enable discord webhook price updates"
+                  emitName="discordPriceEvent"
+                />
+                <Input
+                  id="updateURLInput"
+                  label="Price update webhook URL"
+                  listenName="discordPriceEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="updateNoteInput"
+                  label="Custom notes that should be included in price updates"
+                  listenName="discordPriceEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading title="Alert Settings" />
+                <Checkbox
+                  id="discordAlertCheck"
+                  label="Enable discord webhook alerts"
+                  emitName="discordAlertEvent"
+                />
+                <Checkbox
+                  id="alertMentionCheck"
+                  label="Mention the owner when there is an alert"
+                  listenName="discordAlertEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="alertURLInput"
+                  label="Alert webhook URL"
+                  listenName="discordAlertEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading title="Statistics Settings" />
+                <Checkbox
+                  id="discordStatsCheck"
+                  label="Enable discord webhook statistics"
+                  emitName="discordStatsEvent"
+                />
+                <Input
+                  id="statsURLInput"
+                  label="Stats webhook URL"
+                  listenName="discordStatsEvent"
+                  level="1"
+                  hide="true"
+                />
               </div>
             </div>
-            <div
-              v-bind:class="{ hidden: openTab !== 6, block: openTab === 6 }"
-            ></div>
           </div>
         </div>
       </div>
