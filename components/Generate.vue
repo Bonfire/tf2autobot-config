@@ -85,7 +85,7 @@
                 title="General Settings"
                 description="These settings determine general bot functionality"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox id="showOnlyMetalCheck" label="Show only metal" />
                 <Checkbox
                   id="sortInventoryCheck"
@@ -159,7 +159,7 @@
                 title="Alert Settings"
                 description="These settings determine which alerts to the owner (and admins) in the case of errors or high-value items"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="sendAlertsCheck"
                   label="Send alerts"
@@ -270,7 +270,7 @@
                 title="Pricelist Settings"
                 description="These settings determine how the pricelist should work"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="filterCantAffordCheck"
                   label="Filter out items the bot can't afford"
@@ -301,7 +301,7 @@
                 title="Trade Exception (Bypass) Settings"
                 description="These settings determine what types of trades should and shouldn't be accepted"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="allowEscrowCheck"
                   label="Allow trades with escrow (trade hold)"
@@ -323,7 +323,7 @@
                 title="Trade Summary Settings"
                 description="These settings determine what trade summaries should look like"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="showStockChangesCheck"
                   label="Show item stock changes in trade summary"
@@ -345,7 +345,7 @@
                 title="High-Value Item Settings"
                 description="These settings determine what is considered a High-Value Item and what should be done when receiving a High-Value Item"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="highValueHoldCheck"
                   label="Temporarily disable (hold) high-value items"
@@ -375,7 +375,7 @@
                 title="Item Normalization Settings"
                 description="These settings determine when an item's attributes should and shouldn't affect a trade"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <SectionSubHeading title="Festivized Items" />
                 <Checkbox
                   id="ourFestivizedCheck"
@@ -412,7 +412,7 @@
                 title="Listing Note Settings"
                 description="These settings determine what buying and selling listing notes should display"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Input
                   id="listingBuyDetailsInput"
                   label="Listing buy note"
@@ -460,7 +460,7 @@
                 title="Statistics Settings"
                 description="These settings act mostly as a checkpoint for your bot when you delete your polldata"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Numeric
                   id="lastTotalTradesNumeric"
                   label="Last total trades"
@@ -501,7 +501,7 @@
                 title="Autokeys Settings"
                 description="These settings determine how autokeys should function"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="autokeysEnableCheck"
                   label="Enable autokeys"
@@ -587,7 +587,7 @@
                 title="Crafting/Smelting Settings"
                 description="These settings determine how the bot should craft/smelt items"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="smeltWeaponsCheck"
                   label="Enable the smelting of scrap weapons into scrap"
@@ -626,7 +626,7 @@
                 title="Received Offer Filter Settings"
                 description="These settings determine what types of offers should and shouldn't be accepted"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <SectionSubHeading title="Invalid Value Offers" />
                 <Checkbox
                   id="invalidValueCheck"
@@ -765,7 +765,7 @@
                 title="Manual Review Settings"
                 description="These settings determine when manual reviews should be created and what information they should provide"
               />
-              <div class="flex flex-wrap flex-col">
+              <div class="flex flex-col">
                 <Checkbox
                   id="reviewCheck"
                   label="Enable manual trade reviews"
@@ -919,9 +919,109 @@
                 />
               </div>
             </div>
-            <div
-              v-bind:class="{ hidden: openTab !== 5, block: openTab === 5 }"
-            ></div>
+            <div v-bind:class="{ hidden: openTab !== 5, block: openTab === 5 }">
+              <SectionHeading
+                title="Discord Webhook Settings"
+                description="These settings determine how the bot's Discord Webhook should be setup"
+              />
+              <div class="flex flex-col">
+                <Input id="webhookOwnerIDInput" label="Owner's Discord ID" />
+                <Input id="webhookNameInput" label="Webhook name" />
+                <Input id="webhookAvatarInput" label="Webhook avatar URL" />
+                <Input
+                  id="webhookColorInput"
+                  label="Webhook embed color"
+                  placeholder="16769280"
+                />
+              </div>
+              <SectionHeading
+                title="Webhook Trade Summary Settings"
+                description="These settings determine what trade summaries sent on Discord should look like"
+              />
+              <div class="flex flex-col">
+                <Checkbox
+                  id="summaryEnableCheck"
+                  label="Enable discord webhook trade summaries"
+                  emitName="summaryEvent"
+                />
+                <Input
+                  id="summaryURLInput"
+                  label="Trade summary webhook URL"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Misc Trade Summary Settings"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="summaryLinksCheck"
+                  label="Show trade partner quick links in summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="summaryKeyRateCheck"
+                  label="Show the bot's key rate in summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="summaryPureCheck"
+                  label="Show the bot's pure stock in summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="summaryInventoryCheck"
+                  label="Show bot's inventory statistics in summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="summaryNoteInput"
+                  label="Custom notes that should be included in summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Mention Trade Summary Settings"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="mentionEnableCheck"
+                  label="Mention the owner when sending trade summaries"
+                  listenName="summaryEvent"
+                  level="1"
+                  hide="true"
+                  emitName="mentionEvent"
+                />
+                <Input
+                  id="mentionSKUInput"
+                  label="The bot should mention the owner when a trade contains these SKUs"
+                  listenName="mentionEvent"
+                  level="2"
+                  hide="true"
+                />
+                <Numeric
+                  id="mentionValueNumeric"
+                  label="Mention for any trades higher than this value (in ref)"
+                  listenName="mentionEvent"
+                  level="2"
+                  hide="true"
+                />
+              </div>
+            </div>
             <div
               v-bind:class="{ hidden: openTab !== 6, block: openTab === 6 }"
             ></div>
