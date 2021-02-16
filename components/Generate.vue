@@ -466,9 +466,10 @@
                   id="lastTotalOverpayNumeric"
                   label="Last total overpay received (in refined)"
                 />
-                <Numeric
+                <Input
                   id="profitTimestampNumeric"
                   label="Time since last profit (unix timestamp)"
+                  :placeholder="new Date().valueOf()"
                 />
                 <SectionSubHeading title="Sending Stats Automatically" />
                 <Checkbox
@@ -520,6 +521,53 @@
                   label="Maximum amount of refined"
                   level="1"
                   listenName="autokeysEvent"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Autokeys Banking"
+                  listenName="autokeysEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="autokeysBankCheck"
+                  label="Enable autokeys banking"
+                  listenName="autokeysEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Autokeys Scrap Adjustment"
+                  listenName="autokeysEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="autokeysScrapAdjustCheck"
+                  label="Enable autokeys scrap adjustment"
+                  listenName="autokeysEvent"
+                  emitName="scrapAdjustEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Numeric
+                  id="autokeysMaxRefNumeric"
+                  label="Maximum amount of refined (in scrap)"
+                  level="2"
+                  listenName="scrapAdjustEvent"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Autokeys Accept Understocked"
+                  listenName="autokeysEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="autokeysUnderCheck"
+                  label="Enable autokeys accepting understocked trades"
+                  listenName="autokeysEvent"
+                  level="1"
                   hide="true"
                 />
               </div>
