@@ -583,10 +583,185 @@
                   hide="true"
                 />
               </div>
+              <SectionHeading
+                title="Crafting/Smelting Settings"
+                description="These settings determine how the bot should craft/smelt items"
+              />
+              <div class="flex flex-wrap flex-col">
+                <Checkbox
+                  id="smeltWeaponsCheck"
+                  label="Enable the smelting of scrap weapons into scrap"
+                />
+                <SectionSubHeading title="Metal Smelting Settings" />
+                <Checkbox
+                  id="metalSmeltingCheck"
+                  label="Enable the crafting/smelting of metals into other denominations"
+                  emitName="metalSmeltEvent"
+                />
+                <Numeric
+                  id="minScrapNumeric"
+                  label="Minimum amount of scrap metal to hold"
+                  level="1"
+                  listenName="metalSmeltEvent"
+                  hide="true"
+                />
+                <Numeric
+                  id="minRecNumeric"
+                  label="Minimum amount of reclaimed metal to hold"
+                  level="1"
+                  listenName="metalSmeltEvent"
+                  hide="true"
+                />
+                <Numeric
+                  id="smeltThresholdNumeric"
+                  label="Upgrade metal to next denomination threshold"
+                  level="1"
+                  listenName="metalSmeltEvent"
+                  hide="true"
+                />
+              </div>
             </div>
-            <div
-              v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }"
-            ></div>
+            <div v-bind:class="{ hidden: openTab !== 4, block: openTab === 4 }">
+              <SectionHeading
+                title="Received Offer Filters"
+                description="These settings determine what types of offers should and shouldn't be accepted"
+              />
+              <div class="flex flex-wrap flex-col">
+                <SectionSubHeading title="Invalid Value Offers" />
+                <Checkbox
+                  id="invalidValueCheck"
+                  label="Allow trades with invalid values"
+                  emitName="invalidValueEvent"
+                />
+                <Input
+                  id="invalidValueSKUInput"
+                  label="SKUs that should bypass invalid value"
+                  listenName="invalidValueEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Numeric
+                  id="invalidValueBypassNumeric"
+                  label="Value difference of a bypass SKU for it to bypass invalid value (in ref)"
+                  listenName="invalidValueEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="invalidValueMessageInput"
+                  label="Custom invalid value decline message"
+                />
+                <SectionSubHeading title="Invalid Item Offers" />
+                <Checkbox
+                  id="invalidItemDeclineCheck"
+                  label="Allow trades with invalid items"
+                  emitName="invalidItemEvent"
+                />
+                <Checkbox
+                  id="invalidItemPriceCheck"
+                  label="Give invalid items prices (from prices.tf)"
+                  listenName="invalidItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="invalidItemOverpayCheck"
+                  label="Automatically accept invalid items if overpay"
+                  listenName="invalidItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="invalidItemMessageInput"
+                  label="Custom invalid item decline message"
+                />
+                <SectionSubHeading title="Disabled Item Offers" />
+                <Checkbox
+                  id="disabledItemDeclineCheck"
+                  label="Allow trades with disabled items"
+                  emitName="disabledItemEvent"
+                />
+                <Checkbox
+                  id="disabledItemOverpayCheck"
+                  label="Automatically accept disabled items if overpay"
+                  listenName="disabledItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="disabledItemMessageInput"
+                  label="Custom disabled item decline message"
+                />
+                <SectionSubHeading title="Overstocked Item Offers" />
+                <Checkbox
+                  id="overstockedItemDeclineCheck"
+                  label="Allow trades with overstocked items"
+                  emitName="overstockedItemEvent"
+                />
+                <Checkbox
+                  id="overstockedItemOverpayCheck"
+                  label="Automatically accept overstocked items if overpay"
+                  listenName="overstockedItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="overstockedItemMessageInput"
+                  label="Custom overstocked item decline message"
+                />
+                <SectionSubHeading title="Understocked Item Offers" />
+                <Checkbox
+                  id="understockedItemDeclineCheck"
+                  label="Allow trades with understocked items"
+                  emitName="understockedItemEvent"
+                />
+                <Checkbox
+                  id="understockedItemOverpayCheck"
+                  label="Automatically accept understocked items if overpay"
+                  listenName="understockedItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="understockedItemMessageInput"
+                  label="Custom understocked item decline message"
+                />
+                <SectionSubHeading title="Duped Item Offers" />
+                <Checkbox
+                  id="dupedItemCheck"
+                  label="Check for duped items in trade offers"
+                  emitName="dupedItemEvent"
+                />
+                <Numeric
+                  id="dupedMinKeysNumeric"
+                  label="Minimum number of keys an item must be worth before it is dupe checked"
+                  listenName="dupedItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="dupedItemDeclineCheck"
+                  label="Automatically decline trades with duped items"
+                  listenName="dupedItemEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="dupedItemMessageInput"
+                  label="Custom duped item decline message"
+                />
+                <SectionSubHeading title="Escrow Check Failures" />
+                <Checkbox
+                  id="escrowFailCheck"
+                  label="Ignore escrow check failures"
+                />
+                <SectionSubHeading title="Banned Check Failures" />
+                <Checkbox
+                  id="bannedFailCheck"
+                  label="Ignore banned check failures"
+                />
+              </div>
+            </div>
             <div
               v-bind:class="{ hidden: openTab !== 5, block: openTab === 5 }"
             ></div>
