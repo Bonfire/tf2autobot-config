@@ -1,6 +1,8 @@
 <template>
-  <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 8 : ''">
-    <label class="inline-flex items-center cursor-pointer"
+  <div v-if="enableComponent">
+    <label
+      class="inline-flex items-center cursor-pointer"
+      v-bind:class="level ? 'ml-' + level * 8 : ''"
       ><input
         v-bind:id="id"
         type="checkbox"
