@@ -95,10 +95,6 @@ export default {
 </script>
 
 <style lang="postcss">
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
 .selected-item {
   @apply bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium;
 }

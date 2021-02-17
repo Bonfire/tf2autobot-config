@@ -1116,6 +1116,7 @@
       >
         <button
           class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+          @click="generate()"
         >
           Generate Options (TODO)
         </button>
@@ -1125,6 +1126,8 @@
 </template>
 
 <script>
+import optionsGenerator from '../lib/generate.js';
+
 export default {
   data() {
     return {
@@ -1135,15 +1138,14 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber;
     },
+    generate() {
+      return optionsGenerator.generateOptions();
+    },
   },
 };
 </script>
 
 <style lang="postcss">
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
 .tab-active {
   @apply bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium;
 }
