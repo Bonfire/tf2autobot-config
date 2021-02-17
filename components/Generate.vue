@@ -761,6 +761,9 @@
                 <Input
                   id="dupedItemMessageInput"
                   label="Custom duped item decline message"
+                  listenName="dupedItemEvent"
+                  level="1"
+                  hide="true"
                 />
                 <SectionSubHeading title="Escrow Check Failures" />
                 <Checkbox
@@ -1450,7 +1453,7 @@ export default {
           );
         }
 
-        // Crafting/Smeling Settings / crafting
+        // Crafting/Smelting Settings / crafting
 
         optionsJSON.crafting.weapons.enable = this.getElementChecked(
           'smeltWeaponsCheck'
@@ -1470,6 +1473,97 @@ export default {
             'smeltThresholdNumeric'
           );
         }
+
+        // Received Offer Filter Settings / offerReceived
+
+        optionsJSON.offerReceived.invalidValue.autoDecline.enable = this.getElementChecked(
+          'invalidValueCheck'
+        );
+        optionsJSON.offerReceived.invalidValue.autoDecline.declineReply = this.getElementValue(
+          'invalidValueMessageInput'
+        );
+        if (optionsJSON.offerReceived.invalidValue.autoDecline.enable) {
+          optionsJSON.offerReceived.invalidValue.exceptionValue.skus = this.getStringArray(
+            'invalidValueSKUInput'
+          );
+          optionsJSON.offerReceived.invalidValue.exceptionValue.valueInRef = this.getElementIntValue(
+            'invalidValueBypassNumeric'
+          );
+        }
+
+        optionsJSON.offerReceived.invalidItems.autoDecline.enable = this.getElementChecked(
+          'invalidItemDeclineCheck'
+        );
+        optionsJSON.offerReceived.invalidItems.autoDecline.declineReply = this.getElementValue(
+          'invalidItemMessageInput'
+        );
+        if (optionsJSON.offerReceived.invalidItems.autoDecline.enable) {
+          optionsJSON.offerReceived.invalidItems.givePrice = this.getElementChecked(
+            'invalidItemPriceCheck'
+          );
+          optionsJSON.offerReceived.invalidItems.autoAcceptOverpay = this.getElementChecked(
+            'invalidItemOverpayCheck'
+          );
+        }
+
+        optionsJSON.offerReceived.disabledItems.autoDecline.enable = this.getElementChecked(
+          'disabledItemDeclineCheck'
+        );
+        optionsJSON.offerReceived.disabledItems.autoDecline.declineReply = this.getElementValue(
+          'disabledItemMessageInput'
+        );
+        if (optionsJSON.offerReceived.disabledItems.autoDecline.enable) {
+          optionsJSON.offerReceived.disabledItems.autoAcceptOverpay = this.getElementChecked(
+            'disabledItemOverpayCheck'
+          );
+        }
+
+        optionsJSON.offerReceived.overstocked.autoDecline.enable = this.getElementChecked(
+          'overstockedItemDeclineCheck'
+        );
+        optionsJSON.offerReceived.overstocked.autoDecline.declineReply = this.getElementValue(
+          'overstockedItemMessageInput'
+        );
+        if (optionsJSON.offerReceived.overstocked.autoDecline.enable) {
+          optionsJSON.offerReceived.overstocked.autoAcceptOverpay = this.getElementChecked(
+            'overstockedItemOverpayCheck'
+          );
+        }
+
+        optionsJSON.offerReceived.understocked.autoDecline.enable = this.getElementChecked(
+          'understockedItemDeclineCheck'
+        );
+        optionsJSON.offerReceived.understocked.autoDecline.declineReply = this.getElementValue(
+          'understockedItemMessageInput'
+        );
+        if (optionsJSON.offerReceived.understocked.autoDecline.enable) {
+          optionsJSON.offerReceived.understocked.autoAcceptOverpay = this.getElementChecked(
+            'understockedItemOverpayCheck'
+          );
+        }
+
+        optionsJSON.offerReceived.duped.enableCheck = this.getElementChecked(
+          'dupedItemCheck'
+        );
+        if (optionsJSON.offerReceived.duped.autoDecline.enable) {
+          optionsJSON.offerReceived.duped.minKeys = this.getElementIntValue(
+            'dupedMinKeysNumeric'
+          );
+          optionsJSON.offerReceived.duped.autoDecline.enable = this.getElementChecked(
+            'dupedItemDeclineCheck'
+          );
+          optionsJSON.offerReceived.duped.autoDecline.declineReply = this.getElementValue(
+            'dupedItemMessageInput'
+          );
+        }
+
+        optionsJSON.offerReceived.escrowCheckFailed.ignoreFailed = this.getElementChecked(
+          'escrowFailCheck'
+        );
+
+        optionsJSON.offerReceived.bannedCheckFailed.ignoreFailed = this.getElementChecked(
+          'bannedFailCheck'
+        );
 
         console.log(optionsJSON);
       }
