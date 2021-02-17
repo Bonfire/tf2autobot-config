@@ -1323,18 +1323,71 @@ export default {
         optionsJSON.highValue.enableHold = this.getElementChecked(
           'highValueHoldCheck'
         );
-        optionsJSON.highValue.sheens = [
-          this.getElementValue('highValueSheensInput'),
-        ];
-        optionsJSON.highValue.killstreakers = [
-          this.getElementValue('highValueKSInput'),
-        ];
-        optionsJSON.highValue.strangeParts = [
-          this.getElementValue('highValuePartsInput'),
-        ];
-        optionsJSON.highValue.painted = [
-          this.getElementValue('highValuePaintsInput'),
-        ];
+        optionsJSON.highValue.sheens = this.getStringArray(
+          'highValueSheensInput'
+        );
+        optionsJSON.highValue.killstreakers = this.getStringArray(
+          'highValueKSInput'
+        );
+        optionsJSON.highValue.strangeParts = this.getStringArray(
+          'highValuePartsInput'
+        );
+        optionsJSON.highValue.painted = this.getStringArray(
+          'highValuePaintsInput'
+        );
+
+        // Item Normalization Settings / normalize
+
+        optionsJSON.normalize.festivized.our = this.getElementChecked(
+          'ourFestivizedCheck'
+        );
+        optionsJSON.normalize.festivized.their = this.getElementChecked(
+          'theirFestivizedCheck'
+        );
+        optionsJSON.normalize.strangeAsSecondQuality.our = this.getElementChecked(
+          'ourStrangeSecondQualityCheck'
+        );
+        optionsJSON.normalize.strangeAsSecondQuality.their = this.getElementChecked(
+          'theirStrangeSecondQualityCheck'
+        );
+        optionsJSON.normalize.painted.our = this.getElementChecked(
+          'ourPaintedCheck'
+        );
+        optionsJSON.normalize.painted.their = this.getElementChecked(
+          'theirPaintedCheck'
+        );
+
+        // Listing Note Settings / details
+
+        optionsJSON.details.buy = this.getElementValue(
+          'listingBuyDetailsInput'
+        );
+        optionsJSON.details.sell = this.getElementValue(
+          'listingSellDetailsInput'
+        );
+
+        optionsJSON.details.highValue.showSpells = this.getElementChecked(
+          'showSpellsCheck'
+        );
+        optionsJSON.details.highValue.showStrangeParts = this.getElementChecked(
+          'showStrangePartsCheck'
+        );
+        optionsJSON.details.highValue.showKillstreaker = this.getElementChecked(
+          'showKillstreakersCheck'
+        );
+        optionsJSON.details.highValue.showSheen = this.getElementChecked(
+          'showSheensCheck'
+        );
+        optionsJSON.details.highValue.showPainted = this.getElementChecked(
+          'showPaintedCheck'
+        );
+
+        optionsJSON.details.uses.duel = this.getElementValue(
+          'listingUsesDuelInput'
+        );
+        optionsJSON.details.uses.noiseMaker = this.getElementValue(
+          'listingUsesNoiseInput'
+        );
 
         console.log(optionsJSON);
       }
@@ -1347,6 +1400,11 @@ export default {
     },
     getElementIntValue(ID) {
       return parseInt(document.getElementById(ID).value);
+    },
+    getStringArray(ID) {
+      return this.getElementValue(ID)
+        .split(', ')
+        .map(Function.prototype.call, String.prototype.trim);
     },
   },
 };
