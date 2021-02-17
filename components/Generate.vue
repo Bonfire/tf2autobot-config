@@ -303,8 +303,7 @@
                 />
                 <Numeric
                   id="priceAgeNumeric"
-                  label="Price age (ms)"
-                  level="1"
+                  label="Price age (seconds)"
                   step="100"
                 />
               </div>
@@ -1175,7 +1174,7 @@ export default {
         );
 
         if (optionsJSON.miscSettings.sortInventory.enable) {
-          optionsJSON.miscSettings.sortInventory.type = this.getElementValue(
+          optionsJSON.miscSettings.sortInventory.type = this.getElementIntValue(
             'sortInventoryDropdown'
           );
         }
@@ -1270,6 +1269,23 @@ export default {
           );
         }
 
+        // Pricelist Settings / pricelist
+        optionsJSON.pricelist.filterCantAfford.enable = this.getElementChecked(
+          'filterCantAffordCheck'
+        );
+        optionsJSON.pricelist.autoRemoveIntentSell.enable = this.getElementChecked(
+          'removeIntentSellCheck'
+        );
+        optionsJSON.pricelist.autoAddInvalidItems.enable = this.getElementChecked(
+          'addInvalidItemsCheck'
+        );
+        optionsJSON.pricelist.autoAddPaintedItems.enable = this.getElementChecked(
+          'addPaintedItemsCheck'
+        );
+        optionsJSON.pricelist.priceAge.maxInSeconds = this.getElementIntValue(
+          'priceAgeNumeric'
+        );
+
         console.log(optionsJSON);
       }
     },
@@ -1278,6 +1294,9 @@ export default {
     },
     getElementValue(ID) {
       return document.getElementById(ID).value;
+    },
+    getElementIntValue(ID) {
+      return parseInt(document.getElementById(ID).value);
     },
   },
 };
