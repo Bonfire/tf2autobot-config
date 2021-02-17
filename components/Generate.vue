@@ -360,7 +360,7 @@
               <div class="flex flex-col">
                 <Checkbox
                   id="highValueHoldCheck"
-                  label="Temporarily disable (hold) high-value items"
+                  label="Enable the holding of high-value items"
                 />
                 <Input
                   id="highValueSheensInput"
@@ -1317,6 +1317,24 @@ export default {
         optionsJSON.tradeSummary.showPureInEmoji = this.getElementChecked(
           'showPureEmojiCheck'
         );
+
+        // High-Value Item Settings / highValue
+
+        optionsJSON.highValue.enableHold = this.getElementChecked(
+          'highValueHoldCheck'
+        );
+        optionsJSON.highValue.sheens = [
+          this.getElementValue('highValueSheensInput'),
+        ];
+        optionsJSON.highValue.killstreakers = [
+          this.getElementValue('highValueKSInput'),
+        ];
+        optionsJSON.highValue.strangeParts = [
+          this.getElementValue('highValuePartsInput'),
+        ];
+        optionsJSON.highValue.painted = [
+          this.getElementValue('highValuePaintsInput'),
+        ];
 
         console.log(optionsJSON);
       }

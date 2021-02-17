@@ -2,7 +2,7 @@
   <div v-if="enableComponent" v-bind:class="level ? 'ml-' + level * 4 : ''">
     <div class="relative text-left inline-flex w-full">
       <div class="w-full">
-        <label :id="id" class="text-md font-semibold text-gray-700 w-auto mt-px"
+        <label class="text-md font-semibold text-gray-700 w-auto mt-px"
           >{{ label }}:</label
         >
         <input
