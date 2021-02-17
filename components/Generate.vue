@@ -1286,6 +1286,21 @@ export default {
           'priceAgeNumeric'
         );
 
+        // Trade Exception (Bypass) Settings / bypass
+
+        optionsJSON.bypass.escrow.allow = this.getElementChecked(
+          'allowEscrowCheck'
+        );
+        optionsJSON.bypass.overpay.allow = this.getElementChecked(
+          'allowOverpayCheck'
+        );
+        optionsJSON.bypass.giftWithoutMessage.allow = this.getElementChecked(
+          'allowGiftCheck'
+        );
+        optionsJSON.bypass.bannedPeople.allow = this.getElementChecked(
+          'allowBannedAccCheck'
+        );
+
         console.log(optionsJSON);
       }
     },
