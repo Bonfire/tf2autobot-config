@@ -1116,7 +1116,7 @@
       >
         <button
           class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-          @click="generate()"
+          @click="generateOptions()"
         >
           Generate Options (TODO)
         </button>
@@ -1126,7 +1126,7 @@
 </template>
 
 <script>
-import optionsGenerator from '../lib/generate.js';
+import optionsJSON from '../static/Options.json';
 
 export default {
   data() {
@@ -1138,8 +1138,74 @@ export default {
     toggleTabs: function (tabNumber) {
       this.openTab = tabNumber;
     },
-    generate() {
-      return optionsGenerator.generateOptions();
+    generateOptions() {
+      if (optionsJSON) {
+        // General settings
+        optionsJSON.miscSettings.showOnlyMetal.enable = this.getElementChecked(
+          'showOnlyMetalCheck'
+        );
+        optionsJSON.miscSettings.sortInventory.enable = this.getElementChecked(
+          'sortInventoryCheck'
+        );
+
+        if (optionsJSON.miscSettings.sortInventory.enable) {
+          optionsJSON.miscSettings.sortInventory.type = this.getElementValue(
+            'sortInventoryDropdown'
+          );
+        }
+
+        optionsJSON.miscSettings.createListings.enable = this.getElementChecked(
+          'createListingsCheck'
+        );
+        optionsJSON.miscSettings.addFriends.enable = this.getElementChecked(
+          'addAsFriendCheck'
+        );
+        optionsJSON.miscSettings.sendGroupInvite.enable = this.getElementChecked(
+          'sendGroupInviteCheck'
+        );
+        optionsJSON.miscSettings.autobump.enable = this.getElementChecked(
+          'autobumpCheck'
+        );
+        optionsJSON.miscSettings.skipItemsInTrade.enable = this.getElementChecked(
+          'skipItemsCheck'
+        );
+        optionsJSON.miscSettings.weaponsAsCurrency.enable = this.getElementChecked(
+          'wepsCurrencyCheck'
+        );
+
+        if (optionsJSON.miscSettings.weaponsAsCurrency.enable) {
+          optionsJSON.miscSettings.weaponsAsCurrency.withUncraft = this.getElementChecked(
+            'wepsCurrencyUncraftCheck'
+          );
+        }
+
+        if (this.getElementChecked('fullUsesCheck')) {
+          optionsJSON.miscSettings.checkUses.duel = this.getElementChecked(
+            'fullUsesDuelCheck'
+          );
+          optionsJSON.miscSettings.checkUses.noiseMaker = this.getElementChecked(
+            'fullUsesNoiseCheck'
+          );
+        }
+
+        if (this.getElementChecked('playOnlyTF2Check')) {
+          optionsJSON.miscSettings.game.playOnlyTF2 = true;
+        } else {
+          optionsJSON.miscSettings.game.customName = this.getElementValue(
+            'playCustomGameInput'
+          )
+            ? this.getElementValue('playCustomGameInput')
+            : '';
+        }
+
+        console.log(optionsJSON);
+      }
+    },
+    getElementChecked(ID) {
+      return document.getElementById(ID).checked;
+    },
+    getElementValue(ID) {
+      return document.getElementById(ID).value;
     },
   },
 };

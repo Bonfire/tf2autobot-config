@@ -13,6 +13,7 @@
           ref="btnDropdownRef"
           :id="id"
           :placeholder="label"
+          v-bind:value="dropdownSelectedValue"
         >
           {{ dropdownSelectedKey }}
           <svg
