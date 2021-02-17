@@ -253,6 +253,32 @@
                   level="1"
                   hide="true"
                 />
+                <SectionSubHeading
+                  title="Failed To Accept Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="failedAcceptCheck"
+                  label="Failed to accept a trade offer alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading
+                  title="Unable To Process Offer Alert Settings"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="unableToProcessCheck"
+                  label="Unable to process a trade offer alert"
+                  listenName="sendAlertsChange"
+                  level="1"
+                  hide="true"
+                />
               </div>
               <SectionHeading
                 title="Pricelist Settings"
@@ -1140,7 +1166,7 @@ export default {
     },
     generateOptions() {
       if (optionsJSON) {
-        // General settings
+        // General Settings / miscSettings
         optionsJSON.miscSettings.showOnlyMetal.enable = this.getElementChecked(
           'showOnlyMetalCheck'
         );
@@ -1196,6 +1222,52 @@ export default {
           )
             ? this.getElementValue('playCustomGameInput')
             : '';
+        }
+
+        // Alert Settings / sendAlert
+        optionsJSON.sendAlert.enable = this.getElementChecked(
+          'sendAlertsCheck'
+        );
+        if (optionsJSON.sendAlert.enable) {
+          optionsJSON.sendAlert.autokeys.lowPure = this.getElementChecked(
+            'lowPureCheck'
+          );
+          optionsJSON.sendAlert.autokeys.failedToAdd = this.getElementChecked(
+            'failedToAddCheck'
+          );
+          optionsJSON.sendAlert.autokeys.failedToUpdate = this.getElementChecked(
+            'failedToUpdateCheck'
+          );
+          optionsJSON.sendAlert.autokeys.failedToDisable = this.getElementChecked(
+            'failedToDisableCheck'
+          );
+
+          optionsJSON.sendAlert.backpackFull = this.getElementChecked(
+            'backpackFullCheck'
+          );
+
+          optionsJSON.sendAlert.highValue.gotDisabled = this.getElementChecked(
+            'gotDisabledCheck'
+          );
+          optionsJSON.sendAlert.highValue.receivedNotInPricelist = this.getElementChecked(
+            'notInPricelistCheck'
+          );
+          optionsJSON.sendAlert.highValue.tryingToTake = this.getElementChecked(
+            'tryingToTakeCheck'
+          );
+
+          optionsJSON.sendAlert.autoRemoveIntentSellFailed = this.getElementChecked(
+            'removeSellFailedCheck'
+          );
+          optionsJSON.sendAlert.autoAddPaintedItems = this.getElementChecked(
+            'addPaintedItemsCheck'
+          );
+          optionsJSON.sendAlert.failedAccept = this.getElementChecked(
+            'failedAcceptCheck'
+          );
+          optionsJSON.sendAlert.unableToProcessOffer = this.getElementChecked(
+            'unableToProcessCheck'
+          );
         }
 
         console.log(optionsJSON);
