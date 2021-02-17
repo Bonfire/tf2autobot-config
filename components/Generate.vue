@@ -1417,6 +1417,39 @@ export default {
           );
         }
 
+        // Autokeys Settings / autokeys
+
+        optionsJSON.autokeys.enable = this.getElementChecked(
+          'autokeysEnableCheck'
+        );
+        if (optionsJSON.autokeys.enable) {
+          optionsJSON.autokeys.minKeys = this.getElementIntValue(
+            'autokeysMinKeysNumeric'
+          );
+          optionsJSON.autokeys.maxKeys = this.getElementIntValue(
+            'autokeysMaxKeysNumeric'
+          );
+          optionsJSON.autokeys.minRefined = this.getElementIntValue(
+            'autokeysMinRefNumeric'
+          );
+          optionsJSON.autokeys.maxRefined = this.getElementIntValue(
+            'autokeysMaxRefNumeric'
+          );
+
+          optionsJSON.autokeys.banking.enable = this.getElementChecked(
+            'autokeysBankCheck'
+          );
+          optionsJSON.autokeys.scrapAdjustment.enable = this.getElementChecked(
+            'autokeysScrapAdjustCheck'
+          );
+          optionsJSON.autokeys.scrapAdjustment.value = this.getElementIntValue(
+            'autokeysMaxRefNumeric'
+          );
+          optionsJSON.autokeys.accept.understock = this.getElementIntValue(
+            'autokeysUnderCheck'
+          );
+        }
+
         console.log(optionsJSON);
       }
     },
