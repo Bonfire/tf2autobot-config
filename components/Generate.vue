@@ -1450,6 +1450,27 @@ export default {
           );
         }
 
+        // Crafting/Smeling Settings / crafting
+
+        optionsJSON.crafting.weapons.enable = this.getElementChecked(
+          'smeltWeaponsCheck'
+        );
+
+        optionsJSON.crafting.metals.enable = this.getElementChecked(
+          'metalSmeltingCheck'
+        );
+        if (optionsJSON.crafting.metals.enable) {
+          optionsJSON.crafting.metals.minScrap = this.getElementIntValue(
+            'minScrapNumeric'
+          );
+          optionsJSON.crafting.metals.minRec = this.getElementIntValue(
+            'minRecNumeric'
+          );
+          optionsJSON.crafting.metals.threshold = this.getElementIntValue(
+            'smeltThresholdNumeric'
+          );
+        }
+
         console.log(optionsJSON);
       }
     },
