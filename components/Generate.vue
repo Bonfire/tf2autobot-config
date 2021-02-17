@@ -1389,6 +1389,34 @@ export default {
           'listingUsesNoiseInput'
         );
 
+        // Statistics Settings / statistics
+
+        optionsJSON.statistics.lastTotalTrades = this.getElementIntValue(
+          'lastTotalTradesNumeric'
+        );
+        optionsJSON.statistics.startingTimeInUnix = this.getElementIntValue(
+          'startingTimeInput'
+        );
+        optionsJSON.statistics.lastTotalProfitMadeInRef = this.getElementIntValue(
+          'lastTotalProfitNumeric'
+        );
+        optionsJSON.statistics.lastTotalProfitOverpayInRef = this.getElementIntValue(
+          'lastTotalOverpayNumeric'
+        );
+        optionsJSON.statistics.profitDataSinceInUnix = this.getElementIntValue(
+          'profitTimestampNumeric'
+        );
+
+        optionsJSON.statistics.sendStats.enable = this.getElementChecked(
+          'sendAutomatedStatsCheck'
+        );
+
+        if (optionsJSON.statistics.sendStats.enable) {
+          optionsJSON.statistics.sendStats.time = this.getStringArray(
+            'sendStatsIntervalInput'
+          );
+        }
+
         console.log(optionsJSON);
       }
     },
