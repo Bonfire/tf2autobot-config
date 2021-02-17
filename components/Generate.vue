@@ -1224,6 +1224,7 @@ export default {
         }
 
         // Alert Settings / sendAlert
+
         optionsJSON.sendAlert.enable = this.getElementChecked(
           'sendAlertsCheck'
         );
@@ -1270,6 +1271,7 @@ export default {
         }
 
         // Pricelist Settings / pricelist
+
         optionsJSON.pricelist.filterCantAfford.enable = this.getElementChecked(
           'filterCantAffordCheck'
         );
@@ -1299,6 +1301,21 @@ export default {
         );
         optionsJSON.bypass.bannedPeople.allow = this.getElementChecked(
           'allowBannedAccCheck'
+        );
+
+        // Trade Summary Settings / tradeSummary
+
+        optionsJSON.tradeSummary.showStockChanges = this.getElementChecked(
+          'showStockChangesCheck'
+        );
+        optionsJSON.tradeSummary.showTimeTakenInMS = this.getElementChecked(
+          'showTimeTakenCheck'
+        );
+        optionsJSON.tradeSummary.showItemPrices = this.getElementChecked(
+          'showItemPricesCheck'
+        );
+        optionsJSON.tradeSummary.showPureInEmoji = this.getElementChecked(
+          'showPureEmojiCheck'
         );
 
         console.log(optionsJSON);
