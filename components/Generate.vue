@@ -1631,7 +1631,7 @@ export default {
           encodeURIComponent(JSON.stringify(optionsJSON));
         var downloadAnchorNode = document.createElement('a');
         downloadAnchorNode.setAttribute('href', dataStr);
-        downloadAnchorNode.setAttribute('download', 'Options.json');
+        downloadAnchorNode.setAttribute('download', 'options.json');
         document.body.appendChild(downloadAnchorNode); // required for firefox
         downloadAnchorNode.click();
         downloadAnchorNode.remove();
