@@ -2,7 +2,9 @@
   <div class="flex flex-wrap">
     <div class="w-full px-8">
       <div class="relative text-left inline-flex">
-        <span class="text-md font-semibold text-gray-700 w-auto mt-px"
+        <span
+          class="text-md font-semibold text-gray-700 w-auto mt-px hint--top hint--rounded hint--large"
+          :aria-label="tooltip"
           >{{ label }}:</span
         >
         <button
@@ -63,10 +65,11 @@
 </template>
 
 <script>
+import 'hint.css';
 import Popper from 'popper.js';
 
 export default {
-  props: ['options', 'id', 'label', 'value'],
+  props: ['options', 'id', 'label', 'value', 'tooltip'],
   data() {
     return {
       dropdownPopoverShow: false,

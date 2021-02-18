@@ -78,11 +78,13 @@
                   id="showOnlyMetalCheck"
                   label="Show only metal"
                   value="checked"
+                  tooltip="If this is set to false, the bot will show all prices in the format of [x keys, y ref]. Example: (5 keys, 10 ref). If this is set to true the bot will instead show all prices in the format of [x ref]. Example: (260 ref)."
                 />
                 <Checkbox
                   id="sortInventoryCheck"
                   label="Sort inventory"
                   value="checked"
+                  tooltip="If set to false your bot will not automatically sort its own inventory."
                 />
                 <Dropdown
                   id="sortInventoryDropdown"
@@ -97,6 +99,7 @@
                     { name: 'Slot', value: 102 },
                   ]"
                   :value="3"
+                  tooltip="By default, your bot will sort inventory by rarity."
                 />
                 <Checkbox
                   id="createListingsCheck"
