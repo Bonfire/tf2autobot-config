@@ -1628,7 +1628,7 @@ export default {
         // Download the generated options file
         var dataStr =
           'data:text/json;charset=utf-8,' +
-          encodeURIComponent(JSON.stringify(optionsJSON));
+          encodeURIComponent(JSON.stringify(optionsJSON, null, 4));
         var downloadAnchorNode = document.createElement('a');
         downloadAnchorNode.setAttribute('href', dataStr);
         downloadAnchorNode.setAttribute('download', 'options.json');
