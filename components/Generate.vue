@@ -472,7 +472,7 @@
                   label="Last total trades"
                   value="0"
                 />
-                <Input
+                <Numeric
                   id="startingTimeInput"
                   label="Starting time (unix timestamp)"
                   value="0"
@@ -487,7 +487,7 @@
                   label="Last total overpay received (in refined)"
                   value="0"
                 />
-                <Input
+                <Numeric
                   id="profitTimestampNumeric"
                   label="Time since last profit (unix timestamp)"
                   value="0"
