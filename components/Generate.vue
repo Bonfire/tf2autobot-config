@@ -1565,6 +1565,56 @@ export default {
           'bannedFailCheck'
         );
 
+        // Manual Review Settings / manualReview
+
+        optionsJSON.manualReview.enable = this.getElementChecked('reviewCheck');
+        if (optionsJSON.manualReview.enable) {
+          optionsJSON.manualReview.showOfferSummary = this.getElementChecked(
+            'reviewSummaryCheck'
+          );
+          optionsJSON.manualReview.showReviewOfferNote = this.getElementChecked(
+            'reviewNoteCheck'
+          );
+          optionsJSON.manualReview.showOwnerCurrentTime = this.getElementChecked(
+            'reviewTimeCheck'
+          );
+          optionsJSON.manualReview.showItemPrices = this.getElementChecked(
+            'reviewPriceCheck'
+          );
+
+          optionsJSON.manualReview.invalidValue.note = this.getElementValue(
+            'reviewValueNoteInput'
+          );
+          optionsJSON.manualReview.invalidItems.note = this.getElementValue(
+            'reviewItemsNoteInput'
+          );
+          optionsJSON.manualReview.disabledItems.note = this.getElementValue(
+            'reviewDisabledNoteInput'
+          );
+          optionsJSON.manualReview.overstocked.note = this.getElementValue(
+            'reviewOverstockedNoteInput'
+          );
+          optionsJSON.manualReview.understocked.note = this.getElementValue(
+            'reviewUnderstockedNoteInput'
+          );
+          optionsJSON.manualReview.duped.note = this.getElementValue(
+            'reviewDupedNoteInput'
+          );
+
+          optionsJSON.manualReview.dupedCheckFailed.note = this.getElementValue(
+            'reviewDupeFailNoteInput'
+          );
+          optionsJSON.manualReview.escrowCheckFailed.note = this.getElementValue(
+            'reviewEscrowNoteInput'
+          );
+          optionsJSON.manualReview.bannedCheckFailed.note = this.getElementValue(
+            'reviewBanNoteInput'
+          );
+          optionsJSON.manualReview.additionalNotes = this.getElementValue(
+            'reviewCustomNoteInput'
+          );
+        }
+
         console.log(optionsJSON);
       }
     },
