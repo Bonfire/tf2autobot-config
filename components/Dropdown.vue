@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap" v-if="enableComponent">
+  <div class="flex flex-wrap">
     <div class="w-full px-8">
       <div class="relative text-left inline-flex">
         <span class="text-md font-semibold text-gray-700 w-auto mt-px"
@@ -66,13 +66,12 @@
 import Popper from 'popper.js';
 
 export default {
-  props: ['options', 'id', 'listenName', 'label', 'hide'],
+  props: ['options', 'id', 'label', 'value'],
   data() {
     return {
       dropdownPopoverShow: false,
-      dropdownSelectedValue: -1,
+      dropdownSelectedValue: this.value,
       dropdownSelectedKey: '...',
-      enableComponent: !this.hide ? true : false,
     };
   },
   methods: {
@@ -86,11 +85,6 @@ export default {
         });
       }
     },
-  },
-  mounted() {
-    this.$root.$on(this.listenName, () => {
-      this.enableComponent = !this.enableComponent;
-    });
   },
 };
 </script>
