@@ -995,6 +995,13 @@
                   level="1"
                   hide="true"
                 />
+                <Input
+                  id="summaryNoteInput"
+                  label="Custom notes that should be included in summaries"
+                  listenName="discordSummaryEvent"
+                  level="1"
+                  hide="true"
+                />
                 <Checkbox
                   id="mentionEnableCheck"
                   label="Mention the owner when sending trade summaries"
@@ -1015,13 +1022,6 @@
                   label="Mention for any trades higher than this value (in ref)"
                   listenName="mentionEvent"
                   level="2"
-                  hide="true"
-                />
-                <Input
-                  id="summaryNoteInput"
-                  label="Custom notes that should be included in summaries"
-                  listenName="discordSummaryEvent"
-                  level="1"
                   hide="true"
                 />
                 <SectionSubHeading title="Trade Offer Review Settings" />
@@ -1076,6 +1076,33 @@
                   id="reviewInventoryCheck"
                   label="Show bot's inventory statistics in manual reviews"
                   listenName="discordReviewEvent"
+                  level="1"
+                  hide="true"
+                />
+                <SectionSubHeading title="Message Settings" />
+                <Checkbox
+                  id="messageCheck"
+                  label="Enable alerts for messages sent to the bot"
+                  emitName="messageEvent"
+                />
+                <Checkbox
+                  id="messageMentionCheck"
+                  label="Mention the owner on new messages"
+                  listenName="messageEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Input
+                  id="messageURLInput"
+                  label="Message webhook URL"
+                  listenName="messageEvent"
+                  level="1"
+                  hide="true"
+                />
+                <Checkbox
+                  id="messageLinksCheck"
+                  label="Show trade partner quick links on new messages"
+                  listenName="messageEvent"
                   level="1"
                   hide="true"
                 />
@@ -1612,6 +1639,131 @@ export default {
           );
           optionsJSON.manualReview.additionalNotes = this.getElementValue(
             'reviewCustomNoteInput'
+          );
+        }
+
+        // Discord Webhook Settings / discordWebhook
+
+        optionsJSON.discordWebhook.ownerID = this.getElementValue(
+          'webhookOwnerIDInput'
+        );
+        optionsJSON.discordWebhook.displayName = this.getElementValue(
+          'webhookNameInput'
+        );
+        optionsJSON.discordWebhook.avatarURL = this.getElementValue(
+          'webhookAvatarInput'
+        );
+        optionsJSON.discordWebhook.embedColor = this.getElementValue(
+          'webhookColorInput'
+        );
+
+        optionsJSON.discordWebhook.tradeSummary.enable = this.getElementChecked(
+          'discordSummaryCheck'
+        );
+        if (optionsJSON.discordWebhook.tradeSummary.enable) {
+          optionsJSON.discordWebhook.tradeSummary.url = this.getStringArray(
+            'summaryURLInput'
+          );
+          optionsJSON.discordWebhook.tradeSummary.misc.showQuickLinks = this.getElementChecked(
+            'summaryLinksCheck'
+          );
+          optionsJSON.discordWebhook.tradeSummary.misc.showKeyRate = this.getElementChecked(
+            'summaryKeyRateCheck'
+          );
+          optionsJSON.discordWebhook.tradeSummary.misc.showPureStock = this.getElementChecked(
+            'summaryPureCheck'
+          );
+          optionsJSON.discordWebhook.tradeSummary.misc.showInventory = this.getElementChecked(
+            'summaryInventoryCheck'
+          );
+          optionsJSON.discordWebhook.tradeSummary.misc.note = this.getElementValue(
+            'summaryNoteInput'
+          );
+
+          optionsJSON.discordWebhook.tradeSummary.mentionOwner.enable = this.getElementChecked(
+            'mentionEnableCheck'
+          );
+          optionsJSON.discordWebhook.tradeSummary.mentionOwner.itemSkus = this.getStringArray(
+            'mentionSKUInput'
+          );
+          optionsJSON.discordWebhook.tradeSummary.mentionOwner.tradeValueInRef = this.getElementIntValue(
+            'mentionValueNumeric'
+          );
+        }
+
+        optionsJSON.discordWebhook.offerReview.enable = this.getElementChecked(
+          'discordReviewCheck'
+        );
+        if (optionsJSON.discordWebhook.offerReview.enable) {
+          optionsJSON.discordWebhook.offerReview.url = this.getElementValue(
+            'reviewURLInput'
+          );
+          optionsJSON.discordWebhook.offerReview.mentionInvalidValue = this.getElementChecked(
+            'reviewInvalidCheck'
+          );
+          optionsJSON.discordWebhook.offerReview.isMention = this.getElementChecked(
+            'reviewMentionCheck'
+          );
+
+          optionsJSON.discordWebhook.offerReview.misc.showQuickLinks = this.getElementChecked(
+            'reviewLinksCheck'
+          );
+          optionsJSON.discordWebhook.offerReview.misc.showKeyRate = this.getElementChecked(
+            'reviewKeyRateCheck'
+          );
+          optionsJSON.discordWebhook.offerReview.misc.showPureStock = this.getElementChecked(
+            'reviewPureCheck'
+          );
+          optionsJSON.discordWebhook.offerReview.misc.showInventory = this.getElementChecked(
+            'reviewInventoryCheck'
+          );
+        }
+
+        optionsJSON.discordWebhook.messages.enable = this.getElementChecked(
+          'messageCheck'
+        );
+        if (optionsJSON.discordWebhook.messages.enable) {
+          optionsJSON.discordWebhook.messages.isMention = this.getElementChecked(
+            'messageMentionCheck'
+          );
+          optionsJSON.discordWebhook.messages.url = this.getElementValue(
+            'messageURLInput'
+          );
+          optionsJSON.discordWebhook.messages.showQuickLinks = this.getElementChecked(
+            'messageLinksCheck'
+          );
+        }
+
+        optionsJSON.discordWebhook.priceUpdate.enable = this.getElementChecked(
+          'priceUpdateCheck'
+        );
+        if (optionsJSON.discordWebhook.priceUpdate.enable) {
+          optionsJSON.discordWebhook.priceUpdate.url = this.getElementValue(
+            'updateURLInput'
+          );
+          optionsJSON.discordWebhook.priceUpdate.note = this.getElementValue(
+            'updateNoteInput'
+          );
+        }
+
+        optionsJSON.discordWebhook.sendAlert.enable = this.getElementChecked(
+          'discordAlertCheck'
+        );
+        if (optionsJSON.discordWebhook.sendAlert.enable) {
+          optionsJSON.discordWebhook.sendAlert.isMention = this.getElementChecked(
+            'alertMentionCheck'
+          );
+          optionsJSON.discordWebhook.sendAlert.url = this.getElementValue(
+            'alertURLInput'
+          );
+        }
+
+        optionsJSON.discordWebhook.sendStats.enable = this.getElementChecked(
+          'discordStatsCheck'
+        );
+        if (optionsJSON.discordWebhook.sendStats.enable) {
+          optionsJSON.discordWebhook.sendStats.url = this.getElementValue(
+            'statsURLInput'
           );
         }
 
