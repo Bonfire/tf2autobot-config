@@ -105,59 +105,74 @@
                   id="createListingsCheck"
                   label="Create listings"
                   value="checked"
+                  tooltip="If set to false, your bot will not list items for trade while it is running (if changed while your bot is running, this wont work unless restarted)."
                 />
                 <Checkbox
                   id="addAsFriendCheck"
                   label="Add as a friend"
                   value="checked"
+                  tooltip="If set to false, your bot will not allow others to add it as a Steam friend (except admins). FALSE IS NOT RECOMMENDED!"
                 />
                 <Checkbox
                   id="sendGroupInviteCheck"
                   label="Send group invite"
                   value="checked"
+                  tooltip="If set to false, your bot will not invite people to join Steam groups."
                 />
-                <Checkbox id="autobumpCheck" label="Autobump (auto-relist)" />
+                <Checkbox
+                  id="autobumpCheck"
+                  label="Autobump (auto-relist)"
+                  tooltip="If set to true, your bot will re-list all listings every 30 minutes. The bot will fail to re-list items if backpack.tf is down for maintenance or experiencing major outage. Please consider donating to backpack.tf or purchasing backpack.tf premium to enable automatic listing bumping. ENABLING THIS IS NOT RECOMMENDED!"
+                />
                 <Checkbox
                   id="skipItemsCheck"
                   label="Skip items in trade"
                   value="checked"
+                  tooltip="By default, when your bot is constructing an offer (trade partner buy/sell through command), your bot will skip any items that are currently in other active trades. Setting this to false will disable this feature."
                 />
                 <Checkbox
                   id="wepsCurrencyCheck"
                   label="Weapons as currency"
                   value="checked"
+                  tooltip="If set to false, your bot will not value craft/uncraft weapons as currency (0.05 refined)."
                 />
                 <Checkbox
                   id="wepsCurrencyUncraftCheck"
                   label="Include uncraftable weapons"
                   level="1"
                   value="checked"
+                  tooltip="If set to false, your bot will exclude uncraft weapons as currency (0.05 refined)."
                 />
                 <Checkbox
                   id="fullUsesCheck"
                   label="Full uses check"
                   value="checked"
+                  tooltip="These settings determine how items with uses should be processed."
                 />
                 <Checkbox
                   id="fullUsesDuelCheck"
                   label="Dueling minigame"
                   level="1"
                   value="checked"
+                  tooltip="If set to false, your bot will buy Dueling Mini-Games regardless of how many uses are left. Otherwise, it will only accept full Dueling Mini-Games (5 uses left)."
                 />
                 <Checkbox
                   id="fullUsesNoiseCheck"
                   label="Noise maker"
                   level="1"
                   value="checked"
+                  tooltip="If set to false, your bot will buy Noise Makers regardless of how many uses are left. Otherwise, it will only accept full Noise Makers (25 uses left)."
                 />
                 <Checkbox
                   id="playOnlyTF2Check"
                   label="Display TF2 as running game"
+                  tooltip="Set to true if you want your bot to only play Team Fortress 2. Setting this to true will ignore the below Option."
                 />
                 <Input
                   id="playCustomGameInput"
                   label="Custom game name"
                   level="1"
+                  tooltip="Name of the custom game you'd like your bot to play. Limited to only 60 characters."
                 />
               </div>
               <SectionHeading
@@ -169,6 +184,7 @@
                   id="sendAlertsCheck"
                   label="Send alerts"
                   value="checked"
+                  tooltip="Set to false to never send any alerts."
                 />
                 <SectionSubHeading title="Autokeys Alert Settings" level="1" />
                 <Checkbox
@@ -176,24 +192,28 @@
                   label="Low pure alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot is low on keys and ref"
                 />
                 <Checkbox
                   id="failedToAddCheck"
                   label="Failed to add key alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to add key during an autokeys operation"
                 />
                 <Checkbox
                   id="failedToUpdateCheck"
                   label="Failed to update key alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to update key during an autokeys operation"
                 />
                 <Checkbox
                   id="failedToDisableCheck"
                   label="Failed to disable key alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to disable keys during an autokeys operation"
                 />
                 <SectionSubHeading title="Backpack Alert Settings" level="1" />
                 <Checkbox
@@ -201,6 +221,7 @@
                   label="Backpack full alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to send an offer due to the bot or the trade partner having a full backpack."
                 />
                 <SectionSubHeading
                   title="High-Value Items Alert Settings"
@@ -211,18 +232,21 @@
                   label="Item disabled alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot successfully buys an item with high-value attachment(s) and it gets disabled (only if highValue.enableHold is true)."
                 />
                 <Checkbox
                   id="notInPricelistCheck"
                   label="Item not in pricelist received alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot successfully buys an invalid item with high-value attachment(s) - this will not automatically add the item to the pricelist."
                 />
                 <Checkbox
                   id="tryingToTakeCheck"
                   label="Item not in pricelist requested alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the trade partner is trying to take an item with high-value attachment(s) that is not in the bot pricelist."
                 />
                 <SectionSubHeading
                   title="Auto-Remove Failed Alert Settings"
@@ -233,6 +257,7 @@
                   label="Failed to auto-remove item with intent sell alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when an item is sold with intent sell, and pricelist.autoRemoveIntentSell.enable is true but the bot failed to remove it."
                 />
                 <SectionSubHeading
                   title="Auto-Add Painted Items Alert Settings"
@@ -243,6 +268,7 @@
                   label="Failed to auto-add painted item alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when painted items have been successfully added to sell (or when the bot failed to do so)."
                 />
                 <SectionSubHeading
                   title="Failed To Accept Alert Settings"
@@ -253,6 +279,7 @@
                   label="Failed to accept a trade offer alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to accept a trade offer."
                 />
                 <SectionSubHeading
                   title="Unable To Process Offer Alert Settings"
@@ -263,6 +290,7 @@
                   label="Unable to process a trade offer alert"
                   level="1"
                   value="checked"
+                  tooltip="Send an alert when the bot fails to process a trade offer."
                 />
               </div>
               <SectionHeading
@@ -273,26 +301,31 @@
                 <Checkbox
                   id="filterCantAffordCheck"
                   label="Filter out items the bot can't afford"
+                  tooltip="By default, your bot will list all items in the pricelist. Enabling this option will make it so that your bot will not list items that it cannot afford. (May require a restart to take effect)"
                 />
                 <Checkbox
                   id="removeIntentSellCheck"
                   label="Auto-remove intent sell"
+                  tooltip="By default, any item with intent sell in the pricelist will be automatically removed when the bot no longer has that item. Set this to false to disable this feature."
                 />
                 <Checkbox
                   id="addInvalidItemsCheck"
                   label="Auto-add invalid items"
                   value="checked"
+                  tooltip="If set to false, any accepted invalid items will NOT be automatically added to the pricelist."
                 />
                 <Checkbox
                   id="addPaintedItemsCheck"
                   label="Auto-add painted items"
                   value="checked"
+                  tooltip="If set to false, any accepted items with paint will not be automatically added to the pricelist with intent sell. This feature is only available if your normalize.painted.our is true and normalize.painted.their is false. The bot will set the price to sell by adding the item's auto-priced selling price and  price for paint. You can set your preferred paint price for each paint in detailExtra.painted[paintName].price."
                 />
                 <Numeric
                   id="priceAgeNumeric"
                   label="Price age (seconds)"
                   step="100"
                   value="28800"
+                  tooltip="If an item in the pricelist's last price update exceeds this value, the bot will automatically request a price check for the item from prices.tf (only apply on boot). Default time is 28800 seconds, or 8 hours."
                 />
               </div>
             </div>
