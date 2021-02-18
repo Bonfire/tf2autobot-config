@@ -166,7 +166,7 @@
                 <Checkbox
                   id="playOnlyTF2Check"
                   label="Display TF2 as running game"
-                  tooltip="Set to true if you want your bot to only play Team Fortress 2. Setting this to true will ignore the below Option."
+                  tooltip="Set to true if you want your bot to only play Team Fortress 2. Setting this to true will ignore the below option."
                 />
                 <Input
                   id="playCustomGameInput"
