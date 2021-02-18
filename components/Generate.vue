@@ -315,7 +315,6 @@
                 <Checkbox
                   id="allowBannedAccCheck"
                   label="Allow trades from banned/scammer accounts"
-                  value="checked"
                 />
               </div>
               <SectionHeading
@@ -1626,6 +1625,17 @@ export default {
           );
         }
 
+        // Download the generated options file
+        var dataStr =
+          'data:text/json;charset=utf-8,' +
+          encodeURIComponent(JSON.stringify(optionsJSON));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute('href', dataStr);
+        downloadAnchorNode.setAttribute('download', 'Options.json');
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+
         console.log(optionsJSON);
       }
     },
@@ -1639,9 +1649,15 @@ export default {
       return parseInt(document.getElementById(ID).value);
     },
     getStringArray(ID) {
-      return this.getElementValue(ID)
-        .split(', ')
-        .map(Function.prototype.call, String.prototype.trim);
+      var elementValue = this.getElementValue(ID);
+
+      if (elementValue === '') {
+        return [];
+      } else {
+        return elementValue
+          .split(', ')
+          .map(Function.prototype.call, String.prototype.trim);
+      }
     },
   },
 };
