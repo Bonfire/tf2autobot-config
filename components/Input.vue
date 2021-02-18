@@ -2,7 +2,9 @@
   <div v-bind:class="level ? 'ml-' + level * 4 : ''">
     <div class="relative text-left inline-flex w-full">
       <div class="w-full">
-        <label class="text-md font-semibold text-gray-700 w-auto mt-px"
+        <label
+          class="text-md font-semibold text-gray-700 w-auto mt-px hint--top hint--rounded hint--large"
+          :aria-label="tooltip"
           >{{ label }}:</label
         >
         <input
@@ -18,6 +20,6 @@
 
 <script>
 export default {
-  props: ['id', 'label', 'level', 'value'],
+  props: ['id', 'label', 'level', 'value', 'tooltip'],
 };
 </script>
