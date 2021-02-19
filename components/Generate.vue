@@ -968,13 +968,26 @@
                 description="These settings determine how the bot's Discord Webhook should be setup"
               />
               <div class="flex flex-col">
-                <Input id="webhookOwnerIDInput" label="Owner's Discord ID" />
-                <Input id="webhookNameInput" label="Webhook name" />
-                <Input id="webhookAvatarInput" label="Webhook avatar URL" />
+                <Input
+                  id="webhookOwnerIDInput"
+                  label="Owner's Discord ID"
+                  tooltip="Your Discord ID. To obtain this, right-click on yourself on Discord and click Copy ID. Be sure to enable Developer Mode on Discord by navigating to Settings > Appearance > Advanced. It must be a number in string like 527868979600031765 not IdiNium#8965."
+                />
+                <Input
+                  id="webhookNameInput"
+                  label="Webhook name"
+                  tooltip="The name you'd like to give your bot when it sends a message on Discord."
+                />
+                <Input
+                  id="webhookAvatarInput"
+                  label="Webhook avatar URL"
+                  tooltip="A URL to the image you'd like your bot to have when it sends a discord message. This must be in URL form."
+                />
                 <Input
                   id="webhookColorInput"
                   label="Webhook embed color"
                   value="9171753"
+                  tooltip="The color you'd like associated with your bot's discord messages. You can view the different colors at spycolor.com. Copy the Decimal value. An example of this would be 16769280 for the color #ffe100"
                 />
               </div>
               <SectionHeading
@@ -987,162 +1000,200 @@
                   id="discordSummaryCheck"
                   label="Enable discord webhook messages for trade summaries"
                   value="checked"
+                  tooltip="Display each successful trade summary on your trade summary/live-trades channel via Discord Webhook. If set to false, it will send to your Steam Chat."
                 />
                 <Input
                   id="summaryURLInput"
-                  label="Trade summary webhook URL"
+                  label="Trade summary webhook URL(s)"
                   level="1"
+                  tooltip="An array of Discord Webhook URLs for trade summary. If you want to add more than one, you format them like so: URL1, URL2 (separate each link with a comma). Make sure URL1 is your own Discord Webhook URL as owner mentions and stock changes will only be shown in URL1."
                 />
                 <Checkbox
                   id="summaryLinksCheck"
                   label="Show trade partner quick links in summaries"
                   level="1"
                   value="checked"
+                  tooltip="Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages."
                 />
                 <Checkbox
                   id="summaryKeyRateCheck"
                   label="Show the bot's key rate in summaries"
                   level="1"
                   value="checked"
+                  tooltip="Show your bot's key rate"
                 />
                 <Checkbox
                   id="summaryPureCheck"
                   label="Show the bot's pure stock in summaries"
                   level="1"
                   value="checked"
+                  tooltip="Show your bot's pure stock"
                 />
                 <Checkbox
                   id="summaryInventoryCheck"
                   label="Show bot's inventory statistics in summaries"
                   level="1"
                   value="checked"
+                  tooltip="Show the total amount of items in your bot's inventory."
                 />
                 <Input
                   id="summaryNoteInput"
                   label="Custom notes that should be included in summaries"
                   level="1"
+                  tooltip="Any additional notes you'd like included with trade summaries. Linked note format: [YourText](Link)"
                 />
                 <Checkbox
                   id="mentionEnableCheck"
                   label="Mention the owner when sending trade summaries"
                   level="1"
+                  tooltip="If set to false, your bot will never mention you on each successful trade (except for accepted invalid items or high value items trades)"
                 />
                 <Input
                   id="mentionSKUInput"
                   label="The bot should mention the owner when a trade contains these SKUs"
                   level="2"
+                  tooltip="Your bot will mention you whenever a trade contains an SKU in this list. Supports multiple item SKUs. For example, let say you just want to be mentioned on every unusual and australium trade. You would input ;5;u, ;11;australium (If you want to be mentioned on specific items, just fill in the full item SKU, like so: 725;6;uncraftable). To add more, just separate new items with a comma between each SKU. To be mentioned on every trade, simply put a semicolon (;)."
                 />
                 <Numeric
                   id="mentionValueNumeric"
                   label="Mention for any trades higher than this value (in ref)"
                   level="2"
                   value="0"
+                  tooltip="Zero means disable. If this is set to other than 0, then any trade that's greater or equal to set value will be mentioned."
                 />
                 <SectionSubHeading title="Trade Offer Review Settings" />
                 <Checkbox
                   id="discordReviewCheck"
                   label="Enable discord webhook message for manual reviews"
                   value="checked"
+                  tooltip="If set to false, messages regarding trade offers that require manual review will be sent to your Steam Chat. Otherwise, these messages will be sent on Discord."
                 />
                 <Input
                   id="reviewURLInput"
                   label="Manual review webhook URL"
                   level="1"
+                  tooltip="Discord Webhook URL for manual reviews."
                 />
                 <Checkbox
                   id="reviewInvalidCheck"
                   label="Mention the owner for invalid value manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="By default, you are always mentioned for invalid value manual reviews. If set to false, your bot will not mention you for invalid value offers."
                 />
                 <Checkbox
                   id="reviewMentionCheck"
                   label="Mention the owner for general manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="If set to false, you will never be mentioned on any offer to be reviewed."
                 />
                 <Checkbox
                   id="reviewLinksCheck"
                   label="Show trade partner quick links in manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages."
                 />
                 <Checkbox
                   id="reviewKeyRateCheck"
                   label="Show the bot's key rate in manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="Show your bot's key rate."
                 />
                 <Checkbox
                   id="reviewPureCheck"
                   label="Show the bot's pure stock in manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="Show your bot's pure stock."
                 />
                 <Checkbox
                   id="reviewInventoryCheck"
                   label="Show bot's inventory statistics in manual reviews"
                   level="1"
                   value="checked"
+                  tooltip="Show the total amount of items in your bot's inventory."
                 />
                 <SectionSubHeading title="Message Settings" />
                 <Checkbox
                   id="messageCheck"
                   label="Enable alerts for messages sent to the bot"
                   value="checked"
+                  tooltip="Used to alert you on any messages sent from the trade partner via Discord Webhook. If set to false, it will send to your Steam Chat."
                 />
                 <Checkbox
                   id="messageMentionCheck"
                   label="Mention the owner on new messages"
                   level="1"
                   value="checked"
+                  tooltip="	If set to false, you will never be mentioned on any new messages from trade partner."
                 />
                 <Input
                   id="messageURLInput"
                   label="Message webhook URL"
                   level="1"
+                  tooltip="Discord Webhook URL for messages."
                 />
                 <Checkbox
                   id="messageLinksCheck"
                   label="Show trade partner quick links on new messages"
                   level="1"
                   value="checked"
+                  tooltip="Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages."
                 />
                 <SectionSubHeading title="Price Update Settings" />
                 <Checkbox
                   id="priceUpdateCheck"
                   label="Enable discord webhook price updates"
                   value="checked"
+                  tooltip="Set to false to disable being sent price updates on discord."
                 />
                 <Input
                   id="updateURLInput"
                   label="Price update webhook URL"
                   level="1"
+                  tooltip="The Discord Webhook URL you'd like price update webhook to be sent to."
                 />
                 <Input
                   id="updateNoteInput"
                   label="Custom notes that should be included in price updates"
                   level="1"
+                  tooltip="Any additional notes you'd like included with price update webhook."
                 />
                 <SectionSubHeading title="Alert Settings" />
                 <Checkbox
                   id="discordAlertCheck"
                   label="Enable discord webhook alerts"
                   value="checked"
+                  tooltip="If set to false, the bot will notify you through Steam chat if there is something wrong. Otherwise, the bot will notify you through Discord (sendAlert must be true)."
                 />
                 <Checkbox
                   id="alertMentionCheck"
                   label="Mention the owner when there is an alert"
                   level="1"
                   value="checked"
+                  tooltip="If set to false, you will never be mentioned on any alert."
                 />
-                <Input id="alertURLInput" label="Alert webhook URL" level="1" />
+                <Input
+                  id="alertURLInput"
+                  label="Alert webhook URL"
+                  level="1"
+                  tooltip="The Discord Webhook URL you'd for alerts to be sent to."
+                />
                 <SectionSubHeading title="Statistics Settings" />
                 <Checkbox
                   id="discordStatsCheck"
                   label="Enable discord webhook statistics"
+                  tooltip="If set to false, the bot will send stats through Steam chat. Otherwise, the bot will send stats to Discord (statistics.autoSendStats.enable must be true and statistics.autoSendStats.time is empty or filled)."
                 />
-                <Input id="statsURLInput" label="Stats webhook URL" level="1" />
+                <Input
+                  id="statsURLInput"
+                  label="Stats webhook URL"
+                  level="1"
+                  tooltip="The Discord Webhook URL you'd for stats to be sent to."
+                />
               </div>
             </div>
           </div>
