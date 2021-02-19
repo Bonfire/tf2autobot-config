@@ -698,115 +698,138 @@
                   id="invalidValueCheck"
                   label="Auto-decline trades with invalid values"
                   value="checked"
+                  tooltip="Set this to false if you do not want your bot to automatically decline any trades with invalid value as the ONLY manual review reason where our side value is more than their side value, or do not match exceptionValue.skus and value difference is more than exceptionValue.valueInRef"
                 />
                 <Input
                   id="invalidValueSKUInput"
                   label="SKUs that should bypass invalid value"
                   level="1"
+                  tooltip="An array of SKUs that will bypass the invalid value offer if the difference between the bot's value and their value is not more than .valueInRef. Let's say your bot is selling an Unusual and someone sent an offer with 0.11 ref less, and you want your bot to accept it anyway."
                 />
                 <Numeric
                   id="invalidValueBypassNumeric"
                   label="Value difference of a bypass SKU for it to bypass invalid value (in ref)"
                   level="1"
                   value="0"
+                  tooltip="Exception value for the SKUs that you set above. The default is 0 (meaning no exception)."
                 />
                 <Input
                   id="invalidValueMessageInput"
                   label="Custom invalid value decline message"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you've sent a trade with an invalid value (your side and my side do not hold equal value). [You're missing: #value]"
                 />
                 <SectionSubHeading title="Invalid Item Offers" />
                 <Checkbox
                   id="invalidItemDeclineCheck"
                   label="Auto-decline trades with invalid items"
+                  tooltip="Leave this as false if you do not want your bot to automatically decline trades with invalid items."
                 />
                 <Checkbox
                   id="invalidItemPriceCheck"
                   label="Give invalid items prices (from prices.tf)"
                   level="1"
+                  tooltip="If set to true, your bot will assign price for invalid items (items that are not in your price list) using prices from prices.tf."
                 />
                 <Checkbox
                   id="invalidItemOverpayCheck"
                   label="Automatically accept invalid items if overpay"
                   level="1"
                   value="checked"
+                  tooltip="	If set to false, your bot will not accept trades with invalid items where the value of their side is greater than or equal to the value of your bot's side."
                 />
                 <Input
                   id="invalidItemMessageInput"
                   label="Custom invalid item decline message"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you've sent a trade with an invalid items (not exist in my pricelist)."
                 />
                 <SectionSubHeading title="Disabled Item Offers" />
                 <Checkbox
                   id="disabledItemDeclineCheck"
                   label="Auto-decline trades with disabled items"
+                  tooltip="Set this to true if you want your bot to automatically decline trades with disabled items."
                 />
                 <Checkbox
                   id="disabledItemOverpayCheck"
                   label="Automatically accept disabled items if overpay"
                   level="1"
+                  tooltip="If set to true, your bot will accept trades with disabled items where some items that exist in your price list is currently disabled but the value of their side is greater than to the value of your bot's side."
                 />
                 <Input
                   id="disabledItemMessageInput"
                   label="Custom disabled item decline message"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because the item(s) you're trying to take/give is currently disabled."
                 />
                 <SectionSubHeading title="Overstocked Item Offers" />
                 <Checkbox
                   id="overstockedItemDeclineCheck"
                   label="Auto-decline trades with overstocked items"
+                  tooltip="Set this to true if you want your bot to automatically decline trades with overstocked items"
                 />
                 <Checkbox
                   id="overstockedItemOverpayCheck"
                   label="Automatically accept overstocked items if overpay"
                   level="1"
+                  tooltip="If set to true, your bot will accept trades where some items have already reach their maximum stock but the value of their side is greater than the value of your bot's side."
                 />
                 <Input
                   id="overstockedItemMessageInput"
                   label="Custom overstocked item decline message"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to sell item(s) that I can't buy more of."
                 />
                 <SectionSubHeading title="Understocked Item Offers" />
                 <Checkbox
                   id="understockedItemDeclineCheck"
                   label="Auto-decline trades with understocked items"
+                  tooltip="Set this to true if you want your bot to automatically decline trades with understocked items"
                 />
                 <Checkbox
                   id="understockedItemOverpayCheck"
                   label="Automatically accept understocked items if overpay"
                   level="1"
+                  tooltip="If set to true, your bot will accept trades where some items will have already reached their minimum stock but the value of their side is greater than the value of your bot's side."
                 />
                 <Input
                   id="understockedItemMessageInput"
                   label="Custom understocked item decline message"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to purchase item(s) that I can't sell more of."
                 />
                 <SectionSubHeading title="Duped Item Offers" />
                 <Checkbox
                   id="dupedItemCheck"
                   label="Check for duped items in trade offers"
                   value="checked"
+                  tooltip="If set to true, the bot will perform checks on items to determine whether or not they are duplicated."
                 />
                 <Numeric
                   id="dupedMinKeysNumeric"
                   label="Minimum number of keys an item must be worth before it is dupe checked"
                   level="1"
                   value="10"
+                  tooltip="The minimum number of keys an item must be worth before the bot performs a check for whether or not it is duplicated."
                 />
                 <Checkbox
                   id="dupedItemDeclineCheck"
                   label="Automatically decline trades with duped items"
                   level="1"
+                  tooltip="If set to true, the bot will decline any unusual items that it determines as having been duplicated."
                 />
                 <Input
                   id="dupedItemMessageInput"
                   label="Custom duped item decline message"
                   level="1"
+                  tooltip="Default reply: ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I don't accept duped items."
                 />
                 <SectionSubHeading title="Escrow Check Failures" />
                 <Checkbox
                   id="escrowFailCheck"
                   label="Ignore escrow check failures"
+                  tooltip="By default, your bot will skip the trade and put to review if escrow check failed (probably because Steam is down, or some problem with your bot - restart will help). Set this to true if you want your bot to ignore trade with failed escrow check. SETTING THIS TO TRUE IS NOT RECOMMENDED."
                 />
                 <SectionSubHeading title="Banned Check Failures" />
                 <Checkbox
                   id="bannedFailCheck"
                   label="Ignore banned check failures"
+                  tooltip="By default, your bot will skip the trade and put to review if banned check failed (probably because Steamrep.com or backpack.tf is down). Set this to true if you want your bot to ignore trade with banned check failed. SETTING THIS TO TRUE IS NOT RECOMMENDED."
                 />
               </div>
               <SectionHeading
@@ -818,6 +841,7 @@
                   id="reviewCheck"
                   label="Enable manual trade reviews"
                   value="checked"
+                  tooltip="Offers with reasons such as invalid value and so on will require manual review by you."
                 />
                 <SectionSubHeading
                   title="Manual Review General Settings"
@@ -828,24 +852,28 @@
                   label="Show trade summaries for offers held in review to the trade partner"
                   level="1"
                   value="checked"
+                  tooltip="If set to true, your bot will show the trade offer summary to the trade partner. Otherwise, it will only notify the trade partner that their offer is being held for review."
                 />
                 <Checkbox
                   id="reviewNoteCheck"
                   label="Show hold reasons for offers held in review"
                   level="1"
                   value="checked"
+                  tooltip="By default, your bot will show notes on for each manual review reason"
                 />
                 <Checkbox
                   id="reviewTimeCheck"
                   label="Show the owner's current time to the trade partner when a trade is held for review"
                   level="1"
                   value="checked"
+                  tooltip="By default, your bot will show the owner's time when sending your trade partner any manual offer review notifications."
                 />
                 <Checkbox
                   id="reviewPriceCheck"
                   label="Show the prices of items that are held for review"
                   level="1"
                   value="checked"
+                  tooltip="If set to true, your bot will include item prices (buying/selling prices) in manual review offers (only for the owner)."
                 />
                 <SectionSubHeading
                   title="Invalid Value Review Settings"
@@ -855,6 +883,7 @@
                   id="reviewValueNoteInput"
                   label="Note provided to the trade partner when a trade is held due to invalid value"
                   level="1"
+                  tooltip="Default: You're taking too much in value. then followed by [You're missing: ${value}] (unchangeable)"
                 />
                 <SectionSubHeading
                   title="Invalid Items Review Settings"
@@ -864,6 +893,7 @@
                   id="reviewItemsNoteInput"
                   label="Note provided to the trade partner when a trade is held due to invalid items"
                   level="1"
+                  tooltip="Default: %itemsName% %isOrAre% not in my pricelist."
                 />
                 <SectionSubHeading
                   title="Disabled Items Review Settings"
@@ -873,6 +903,7 @@
                   id="reviewDisabledNoteInput"
                   label="Note provided to the trade partner when a trade is held due to disabled items"
                   level="1"
+                  tooltip="Default: %itemsName% %isOrAre% currently disabled."
                 />
                 <SectionSubHeading
                   title="Overstocked Items Review Settings"
@@ -882,6 +913,7 @@
                   id="reviewOverstockedNoteInput"
                   label="Note provided to the trade partner when a trade is held due to overstocked items"
                   level="1"
+                  tooltip="Default: I can only buy %itemsName% right now."
                 />
                 <SectionSubHeading
                   title="Understocked Items Review Settings"
@@ -891,6 +923,7 @@
                   id="reviewUnderstockedNoteInput"
                   label="Note provided to the trade partner when a trade is held due to understocked items"
                   level="1"
+                  tooltip="Default: I can only sell %itemsName% right now."
                 />
                 <SectionSubHeading
                   title="Duped Items Review Settings"
@@ -900,27 +933,32 @@
                   id="reviewDupedNoteInput"
                   label="Note provided to the trade partner when a trade is held due to duped items"
                   level="1"
+                  tooltip="Default: %itemsName% %isOrAre% appeared to be duped."
                 />
                 <SectionSubHeading title="Other Review Settings" level="1" />
                 <Input
                   id="reviewDupeFailNoteInput"
                   label="Note provided to the trade partner when a trade is held due to a dupe check failure"
                   level="1"
+                  tooltip="Default: I failed to check for duped on %itemsName%."
                 />
                 <Input
                   id="reviewEscrowNoteInput"
                   label="Note provided to the trade partner when a trade is held due to an escrow check failure"
                   level="1"
+                  tooltip="Default: Steam is down and I failed to check your Escrow (Trade holds) status, please wait for my owner to manually accept/decline your offer."
                 />
                 <Input
                   id="reviewBanNoteInput"
                   label="Note provided to the trade partner when a trade is held due to a banned check failure"
                   level="1"
+                  tooltip="Default: Backpack.tf or steamrep.com is down and I failed to check your backpack.tf/steamrep status, please wait for my owner to manually accept/decline your offer."
                 />
                 <Input
                   id="reviewCustomNoteInput"
                   label="Custom note provided to the trade partner for all manual review holds"
                   level="1"
+                  tooltip="Default: Custom additional notes for offer that need to be reviewed."
                 />
               </div>
             </div>
