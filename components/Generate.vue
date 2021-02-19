@@ -527,7 +527,7 @@
               </div>
               <SectionHeading
                 title="Statistics Settings"
-                description="These settings act mostly as a checkpoint for your bot when you delete your polldata"
+                description="These settings act mostly as a checkpoint for your bot when you delete your polldata. You most likely will never need to touch these options"
               />
               <div class="flex flex-col">
                 <Numeric
