@@ -8,7 +8,7 @@
         style="transition: all 0.15s ease 0s"
         :checked="value"
       /><span
-        class="ml-2 text-md font-semibold text-gray-700 hint--top hint--rounded hint--large"
+        class="ml-2 text-md font-semibold text-gray-700 hint--top hint--rounded hint--large mt-px mb-px"
         :aria-label="tooltip"
         >{{ label }}</span
       >

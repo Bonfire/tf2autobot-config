@@ -1205,7 +1205,7 @@
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded shadow"
       >
         <button
-          class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+          class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium generate-button"
           @click="generateOptions()"
         >
           Generate Options
@@ -1847,5 +1847,11 @@ export default {
 
 .tab-inactive {
   @apply text-gray-300 px-3 py-2 rounded-md text-sm font-medium bg-gray-700;
+}
+
+.generate-button {
+  &:hover {
+    @apply bg-gray-700;
+  }
 }
 </style>
