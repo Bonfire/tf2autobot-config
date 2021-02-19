@@ -6,7 +6,7 @@ _A simple config generator for [TF2Autobot](https://github.com/TF2Autobot/tf2aut
 
 ## About
 
-TF2Autobot-Config is a simple config generator for [Team Fortress 2](https://www.teamfortress.com/) trading bots run under the [TF2Autobot](https://github.com/TF2Autobot/tf2autobot) project. Part of setting up your bot is configuring it to your liking, and making your bot personalized to your wants and need. The setup process is a pain due to the extensive JSON file that must be tweaked.
+TF2Autobot-Config is a simple config generator for [Team Fortress 2](https://www.teamfortress.com/) trading bots run under the [TF2Autobot](https://github.com/TF2Autobot/tf2autobot) project. Part of setting up your bot is configuring it to your liking, and making your bot personalized to your wants and needs. The setup process is a pain due to the extensive JSON file that must be tweaked.
 
 This project aims to make the bot configuration process as easy and painless as possible.
 
