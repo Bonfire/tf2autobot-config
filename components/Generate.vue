@@ -473,47 +473,56 @@
                   id="listingBuyDetailsInput"
                   label="Listing buy note"
                   value="I am buying your %name% for %price%, I have %current_stock% / %max_stock%."
+                  tooltip="This is the note that will be included with each buy order placed on backpack.tf"
                 />
                 <Input
                   id="listingSellDetailsInput"
                   label="Listing sell note"
                   value="I am selling my %name% for %price%, I am selling %amount_trade%."
+                  tooltip="This is the note that will be included with each sell order placed on backpack.tf"
                 />
                 <SectionSubHeading title="High-Value Item Parameters" />
                 <Checkbox
                   id="showSpellsCheck"
                   label="Show spells in listing notes"
                   value="checked"
+                  tooltip="Show spell(s) in the listings note."
                 />
                 <Checkbox
                   id="showStrangePartsCheck"
                   label="Show strange parts in listing notes"
+                  tooltip="Show Strange parts (only the one you specified in highValue.strangeParts) in the listings note."
                 />
                 <Checkbox
                   id="showKillstreakersCheck"
                   label="Show killstreakers in listing notes"
                   value="checked"
+                  tooltip="Show killstreaker in the listings note."
                 />
                 <Checkbox
                   id="showSheensCheck"
                   label="Show sheens in listing notes"
                   value="checked"
+                  tooltip="Show Sheen in the listings note."
                 />
                 <Checkbox
                   id="showPaintedCheck"
                   label="Show paint in listing notes"
                   value="checked"
+                  tooltip="Show painted color in the listings note (only for sell orders)."
                 />
                 <SectionSubHeading title="Custom Uses Parameters" />
                 <Input
                   id="listingUsesDuelInput"
                   label="Custom uses parameter for dueling minigames"
                   value="(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟱x 𝗨𝗦𝗘𝗦)"
+                  tooltip="Custom %uses% parameter."
                 />
                 <Input
                   id="listingUsesNoiseInput"
                   label="Custom uses parameter for noise makers"
                   value="(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦)"
+                  tooltip="Custom %uses% parameter."
                 />
               </div>
               <SectionHeading
@@ -525,36 +534,43 @@
                   id="lastTotalTradesNumeric"
                   label="Last total trades"
                   value="0"
+                  tooltip="If you clear out (delete) your polldata.json file, it will reset your total trades count back to zero. This option can be used as an offset to ensure you never lose track of how many trades your bot has completed in total. An example would be if you bot has completed 1000 trades and you want to clear out your polldata.json file. If you set this to 1000, your bot will remember that it has completed 1000 trades in the past."
                 />
                 <Numeric
                   id="startingTimeInput"
                   label="Starting time (unix timestamp)"
                   value="0"
+                  tooltip="Similar to .lastTotalTrades, this option sets the latest instance a trade was made (in Unix Timestamp)."
                 />
                 <Numeric
                   id="lastTotalProfitNumeric"
                   label="Last total profit made (in refined)"
                   value="0"
+                  tooltip="Similar to .lastTotalTrades, but this is for last profit made (value must in refined metal, i.e. 35.44)."
                 />
                 <Numeric
                   id="lastTotalOverpayNumeric"
                   label="Last total overpay received (in refined)"
                   value="0"
+                  tooltip="Similar to .lastTotalProfitMadeInRef, but this is for last profit from overpay (value must in refined metal, i.e. 1000.44)."
                 />
                 <Numeric
                   id="profitTimestampNumeric"
                   label="Time since last profit (unix timestamp)"
                   value="0"
+                  tooltip="Similar to .startingTimeInUnix, this option sets the latest instance a profit was made (in Unix Timestamp)."
                 />
                 <SectionSubHeading title="Sending Stats Automatically" />
                 <Checkbox
                   id="sendAutomatedStatsCheck"
                   label="Regularly send trade statistics"
+                  tooltip="Send the content of !stats command every specified hours below"
                 />
                 <Input
                   id="sendStatsIntervalInput"
                   label="Interval to send stats (THH:MM)"
                   level="1"
+                  tooltip='Time (local/timezone - 24 hours) in hour:minute format. Example: ["T23:59"] will send at only 23:59 PM, everyday. Please include that "T" in front of each time, otherwise this wont work. If this is leave empty array ([]) but .enable is true, then it will use default ["T23:59", "T05:59", "T11:59", "T17:59"].'
                 />
               </div>
               <SectionHeading
@@ -562,36 +578,45 @@
                 description="These settings determine how autokeys should function"
               />
               <div class="flex flex-col">
-                <Checkbox id="autokeysEnableCheck" label="Enable autokeys" />
+                <Checkbox
+                  id="autokeysEnableCheck"
+                  label="Enable autokeys"
+                  tooltip="If set to true, your bot will automatically buy/sell Keys based on the availability of the Pure Metals and Keys in your bot inventory. This is done in an effort to ensure that your bot has enough Pure Metals to perform trades."
+                />
                 <Numeric
                   id="autokeysMinKeysNumeric"
                   label="Minimum number of keys"
                   level="1"
                   value="3"
+                  tooltip="When the bot's current stock of Keys is greater than this value, and the bot's current stock of Pure Metals is less than .minRefined, the bot will start selling Keys in order to convert Keys into Pure Metals. Otherwise, the bot will not sell Keys."
                 />
                 <Numeric
                   id="autokeysMaxKeysNumeric"
                   label="Maximum number of keys"
                   level="1"
                   value="15"
+                  tooltip="When the bot's current stock of Keys is less than this value, and the bot's current stock of Pure Metals is greater than .maxRefined, the bot will start buying Keys in order to convert Pure Metals into Keys. Otherwise, the bot will not buy Keys."
                 />
                 <Numeric
                   id="autokeysMinRefNumeric"
                   label="Minimum amount of refined"
                   level="1"
                   value="30"
+                  tooltip="The minimum number of Pure Metals the bot can have before it begins selling Keys (to turn Keys into Pure Metals). See .minKeys for more information."
                 />
                 <Numeric
                   id="autokeysMaxRefNumeric"
                   label="Maximum amount of refined"
                   level="1"
                   value="150"
+                  tooltip="The maximum number of Pure Metals the bot can have before it begins buying Keys (to turn Pure Metals into Keys). See .maxKeys for more information."
                 />
                 <SectionSubHeading title="Autokeys Banking" level="1" />
                 <Checkbox
                   id="autokeysBankCheck"
                   label="Enable autokeys banking"
                   level="1"
+                  tooltip="If set to true, your bot will bank (buy and sell) Keys. If your bot's current Pure Metals supply is between .minRefined and .maxRefined and Keys > .minKeys, it will bank Keys. autokeys.enable must be set to true to enable this option."
                 />
                 <SectionSubHeading
                   title="Autokeys Scrap Adjustment"
@@ -601,12 +626,14 @@
                   id="autokeysScrapAdjustCheck"
                   label="Enable autokeys scrap adjustment"
                   level="1"
+                  tooltip='If set to true, the bot will make adjustments to the price of Keys when selling or buying. For example, if the current Keys price is "10 refined", the bot will take "10 refined" and add .value when buying, and subtract .value when selling. This is done in an effort to quickly buy and sell Keys using Autokeys when in a pinch by paying more for Keys and selling Keys for less. This is not possible to do when key banking (autokeys.banking.enable set to true).'
                 />
                 <Numeric
                   id="autokeysMaxRefNumeric"
                   label="Maximum amount of scrap to adjust by"
                   level="2"
                   value="1"
+                  tooltip="This is the amount of scrap (0.11 refined) the bot will increase the buy listing or decrease the sell listing when buying/selling Keys using Autokeys (if .enable is set to true)."
                 />
                 <SectionSubHeading
                   title="Autokeys Accept Understocked"
@@ -616,6 +643,7 @@
                   id="autokeysUnderCheck"
                   label="Enable autokeys accepting understocked trades"
                   level="1"
+                  tooltip="If set to true, your bot will accept trades that will lead to keys become under-stocked."
                 />
               </div>
               <SectionHeading
@@ -627,30 +655,35 @@
                   id="smeltWeaponsCheck"
                   label="Enable the smelting of scrap weapons into scrap"
                   value="checked"
+                  tooltip="Setting this to to false will prevent your bot from automatically crafting any duplicated/class-matched craftable weapons into scrap. The pricelist takes priority over this config item. That is to say, if a craft weapon is in the pricelist, it will not be crafted into scrap."
                 />
                 <SectionSubHeading title="Metal Smelting Settings" />
                 <Checkbox
                   id="metalSmeltingCheck"
                   label="Enable the crafting/smelting of metals into other denominations"
                   value="checked"
+                  tooltip="Setting this to false will disable metal crafting entirely. This may cause your bot and the trade partner to not be able to trade because of missing pure. SETTING THIS TO FALSE IS NOT RECOMMENDED."
                 />
                 <Numeric
                   id="minScrapNumeric"
                   label="Minimum amount of scrap metal to hold"
                   level="1"
                   value="9"
+                  tooltip="If your bot has less Scrap Metal than this amount, it will smelt down Reclaimed Metal to maintain ample Scrap Metal supply."
                 />
                 <Numeric
                   id="minRecNumeric"
                   label="Minimum amount of reclaimed metal to hold"
                   level="1"
                   value="9"
+                  tooltip="If your bot has less Reclaimed Metal than this amount, it will smelt down Refined Metal to maintain ample Reclaimed Metal supply."
                 />
                 <Numeric
                   id="smeltThresholdNumeric"
                   label="Upgrade metal to next denomination threshold"
                   level="1"
                   value="9"
+                  tooltip="If the bot's Scrap/Reclaimed Metal count has reached the minimum amount, and Scrap/Reclaimed Metal count has reached this threshold [in other words, Scrap/Reclaimed Metal count is greater than (min + threshold)], it will combine the metal into the next highest denomination."
                 />
               </div>
             </div>
