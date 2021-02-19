@@ -332,47 +332,55 @@
             <div v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }">
               <SectionHeading
                 title="Trade Exception (Bypass) Settings"
-                description="These settings determine what types of trades should and shouldn't be accepted"
+                description="These settings determine what types of trades should and shouldn't be accepted."
               />
               <div class="flex flex-col">
                 <Checkbox
                   id="allowEscrowCheck"
                   label="Allow trades with escrow (trade hold)"
+                  tooltip="If set to true, your bot will allow trades to be held for up to 15 days as a result of the trade partner not having Mobile Authentication enabled."
                 />
                 <Checkbox
                   id="allowOverpayCheck"
                   label="Allow trades with item/pure overpay"
                   value="checked"
+                  tooltip="By default, your bot will allow trade partners to overpay with items or keys/metal (our value more than their value). Set this to false if you want your bot to decline any trades in which it would receive overpay."
                 />
                 <Checkbox
                   id="allowGiftCheck"
                   label="Allow trades without gift messages"
+                  tooltip="If set to true, your bot will accept any gift without the need for the trade partner to include a gift message in the offer message."
                 />
                 <Checkbox
                   id="allowBannedAccCheck"
                   label="Allow trades from banned/scammer accounts"
+                  tooltip="If set to true, your bot will trade with users that are banned on backpack.tf or marked as a scammer on steamrep.com. SETTING THIS TO TRUE IS NOT RECOMMENDED."
                 />
               </div>
               <SectionHeading
                 title="Trade Summary Settings"
-                description="These settings determine what trade summaries should look like"
+                description="These settings determine what trade summaries should look like."
               />
               <div class="flex flex-col">
                 <Checkbox
                   id="showStockChangesCheck"
                   label="Show item stock changes in trade summary"
+                  tooltip="By default the summary will not show stock changes."
                 />
                 <Checkbox
                   id="showTimeTakenCheck"
                   label="Show trade time taken in trade summary"
+                  tooltip="Set to true if you want to include time taken to complete the trade in milliseconds."
                 />
                 <Checkbox
                   id="showItemPricesCheck"
                   label="Show item prices in trade summary"
+                  tooltip="Set to false if you don't want to include item prices (buying/selling prices)."
                 />
                 <Checkbox
                   id="showPureEmojiCheck"
                   label="Show pure using emojis in trade summary"
+                  tooltip="Set to true if you want keys, refined, reclaimed, and scrap to be shown as emojis instead of text."
                 />
               </div>
               <SectionHeading
@@ -384,26 +392,31 @@
                   id="highValueHoldCheck"
                   label="Enable the holding of high-value items"
                   value="checked"
+                  tooltip="By default, whenever your bot accepts items with high valued attachments, it will temporarily be disabled so you can decide whether to manually price it. Set this to false if you want to disable this feature."
                 />
                 <Input
                   id="highValueSheensInput"
                   label="High-value sheens"
                   placeholder="Team Shine"
+                  tooltip="An array of sheens that should be considered high value. Must be a comma separated list of the sheens' full names. If left empty, the bot will hold for all sheens."
                 />
                 <Input
                   id="highValueKSInput"
                   label="High-value killstreakers"
                   placeholder="Tornado, Fire Horns"
+                  tooltip="An array of killstreakers that should be considered high value. Must be a comma separated list of the killstreakers' full names. If left empty, the bot will hold for all killstreakers."
                 />
                 <Input
                   id="highValuePartsInput"
                   label="High-value strange parts"
                   placeholder="Headshot Kills, Kills"
+                  tooltip="An array of strange parts that should be considered high value. Must be a comma separated list of the strange parts' full names. If left empty, the bot will hold for all strange parts."
                 />
                 <Input
                   id="highValuePaintsInput"
                   label="High-value paints"
                   placeholder="After Eight"
+                  tooltip="An array of paints that should be considered high value. Must be a comma separated list of the paints' full names. If left empty, the bot will hold for all paints."
                 />
               </div>
               <SectionHeading
@@ -415,10 +428,12 @@
                 <Checkbox
                   id="ourFestivizedCheck"
                   label="Recognize our Festivized items as their non-Festivized variants"
+                  tooltip="If set to true, your bot will recognize its own Festivized items as its Non-Festivized variant."
                 />
                 <Checkbox
                   id="theirFestivizedCheck"
                   label="Recognize our partner's Festivized items as their non-Festivized variants"
+                  tooltip="If set to true, your bot will recognize other peoples' Festivized items as its Non-Festivized variant."
                 />
                 <SectionSubHeading
                   title="Strange As Second Quality (Elevated Quality) Items"
@@ -426,21 +441,25 @@
                 <Checkbox
                   id="ourStrangeSecondQualityCheck"
                   label="Recognize our items with Strange as a second quality as their non-Strange variants"
+                  tooltip="If set to true, your bot will recognize its own Strange Unique, Strange Haunted or Strange Unusual as Unique, Haunted and Unusual only - ignoring the ;strange part on item's sku)."
                 />
                 <Checkbox
                   id="theirStrangeSecondQualityCheck"
                   label="Recognize our partner's items with Strange as a second quality as their non-Strange variants"
+                  tooltip="If set to true, your bot will recognize other peoples' Strange Unique, Strange Haunted or Strange Unusual as Unique, Haunted and Unusual only - ignoring the ;strange part on item's sku)."
                 />
                 <SectionSubHeading title="Painted Items" />
                 <Checkbox
                   id="ourPaintedCheck"
                   label="Recognize our painted items as their non-painted variants"
                   value="checked"
+                  tooltip="If set to false, your bot will assign painted partial sku on any of its own painted items."
                 />
                 <Checkbox
                   id="theirPaintedCheck"
                   label="Recognize our partner's painted items as their non-painted variants"
                   value="checked"
+                  tooltip="If set to false, your bot will assign painted partial sku on other peoples' painted items."
                 />
               </div>
             </div>
