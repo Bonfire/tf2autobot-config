@@ -1510,7 +1510,7 @@ export default {
           optionsJSON.autokeys.scrapAdjustment.value = this.getElementIntValue(
             'autokeysMaxRefNumeric'
           );
-          optionsJSON.autokeys.accept.understock = this.getElementIntValue(
+          optionsJSON.autokeys.accept.understock = this.getElementChecked(
             'autokeysUnderCheck'
           );
         }
