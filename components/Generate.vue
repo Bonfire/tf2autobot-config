@@ -324,6 +324,18 @@
               />
               <div class="flex flex-col">
                 <Checkbox
+                  id="pricelistPartialEnable"
+                  label="Enable the partial updating of an items price"
+                  tooltip="Please read the wiki to learn more about this config item."
+                />
+                <Numeric
+                  id="pricelistPartialSecs"
+                  label="Partial price update threshold (seconds)"
+                  step="21600"
+                  value="604800"
+                  tooltip="Default value is 7 days. Minimum you can set here is only 1 day (86400 seconds). Please read the wiki for more information on this config item."
+                />
+                <Checkbox
                   id="filterCantAffordCheck"
                   label="Filter out items the bot can't afford"
                   tooltip="By default, your bot will list all items in the pricelist. Enabling this option will make it so that your bot will not list items that it cannot afford. (May require a restart to take effect)"
@@ -1372,6 +1384,12 @@ export default {
 
         // Pricelist Settings / pricelist
 
+        optionsJSON.pricelist.partialPriceUpdate.enable = this.getElementChecked(
+          'pricelistPartialEnable'
+        );
+        optionsJSON.pricelist.partialPriceUpdate.thresholdInSeconds = this.getElementIntValue(
+          'pricelistPartialSecs'
+        );
         optionsJSON.pricelist.filterCantAfford.enable = this.getElementChecked(
           'filterCantAffordCheck'
         );
