@@ -20,6 +20,7 @@
               class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
             >
               <span class="block xl:inline">Welcome to</span>
+              <br />
               <span class="block text-gray-700 xl:inline"
                 >TF2Autobot Config</span
               >
@@ -47,6 +48,9 @@
           </div>
         </main>
       </div>
+    </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 mt-10">
+      <img class="w-full lg:h-full" src="~assets/settings.svg" />
     </div>
   </div>
 </template>
