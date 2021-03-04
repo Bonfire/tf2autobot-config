@@ -736,6 +736,12 @@
                 description="These settings determine what types of offers should and shouldn't be accepted"
               />
               <div class="flex flex-col">
+                <Checkbox
+                  id="preAcceptCheck"
+                  label="Send a pre-accept message"
+                  value="checked"
+                  tooltip="Set this to false if you do not want your bot to send pre-accepted messages to the trade partner."
+                />
                 <SectionSubHeading title="Invalid Value Offers" />
                 <Checkbox
                   id="invalidValueCheck"
@@ -1599,6 +1605,10 @@ export default {
         }
 
         // Received Offer Filter Settings / offerReceived
+
+        optionsJSON.offerReceived.sendPreAcceptMessage.enable = this.getElementChecked(
+          'preAcceptCheck'
+        );
 
         optionsJSON.offerReceived.invalidValue.autoDecline.enable = this.getElementChecked(
           'invalidValueCheck'
