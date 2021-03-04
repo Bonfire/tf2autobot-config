@@ -1199,6 +1199,11 @@
                   value="checked"
                   tooltip="Set to false to disable being sent price updates on discord."
                 />
+                <Checkbox
+                  id="priceUpdateStockCheck"
+                  label="Enable discord webhook price updates only for items in stock"
+                  tooltip="Set to true if you want your bot to show price changes only for items that are in stock."
+                />
                 <Input
                   id="updateURLInput"
                   label="Price update webhook URL"
@@ -1845,6 +1850,9 @@ export default {
           'priceUpdateCheck'
         );
         if (optionsJSON.discordWebhook.priceUpdate.enable) {
+          optionsJSON.discordWebhook.priceUpdate.showOnlyInStock = this.getElementChecked(
+            'priceUpdateStockCheck'
+          );
           optionsJSON.discordWebhook.priceUpdate.url = this.getElementValue(
             'updateURLInput'
           );
