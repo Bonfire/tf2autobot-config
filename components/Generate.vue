@@ -432,6 +432,12 @@
                   tooltip="By default, whenever your bot accepts items with high valued attachments, it will temporarily be disabled so you can decide whether to manually price it. Set this to false if you want to disable this feature."
                 />
                 <Input
+                  id="highValueSpellsInput"
+                  label="High-value spells"
+                  placeholder="Team Spirit Footprints"
+                  tooltip="An array of spells that should be considered high value. Must be a comma separated list of the paints' full names. If left empty, the bot will hold for all spells."
+                />
+                <Input
                   id="highValueSheensInput"
                   label="High-value sheens"
                   placeholder="Team Shine"
@@ -1452,6 +1458,9 @@ export default {
         );
         optionsJSON.highValue.painted = this.getStringArray(
           'highValuePaintsInput'
+        );
+        optionsJSON.highValue.spells = this.getStringArray(
+          'highValueSpellsInput'
         );
 
         // Item Normalization Settings / normalize
