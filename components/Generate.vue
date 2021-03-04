@@ -292,6 +292,31 @@
                   value="checked"
                   tooltip="Send an alert when the bot fails to process a trade offer."
                 />
+                <SectionSubHeading
+                  title="Partial Price Update Alert Settings"
+                  level="1"
+                />
+                <Checkbox
+                  id="partialOnUpdateCheck"
+                  label="Partial item price update alert"
+                  level="1"
+                  value="checked"
+                  tooltip="Send an alert when the bot partially update item prices."
+                />
+                <Checkbox
+                  id="partialSuccessCheck"
+                  label="Partial item price update successful alert"
+                  level="1"
+                  value="checked"
+                  tooltip="Send an alert when the bot successfully update the prices for previously partially updated prices."
+                />
+                <Checkbox
+                  id="partialFailCheck"
+                  label="Partial item price update failed alert"
+                  level="1"
+                  value="checked"
+                  tooltip="Send an alert when the bot failed to update the prices for previously partially updated prices."
+                />
               </div>
               <SectionHeading
                 title="Pricelist Settings"
@@ -1332,6 +1357,16 @@ export default {
           );
           optionsJSON.sendAlert.unableToProcessOffer = this.getElementChecked(
             'unableToProcessCheck'
+          );
+
+          optionsJSON.sendAlert.partialPrice.onUpdate = this.getElementChecked(
+            'partialOnUpdateCheck'
+          );
+          optionsJSON.sendAlert.partialPrice.onSuccessUpdatePartialPriced = this.getElementChecked(
+            'partialSuccessCheck'
+          );
+          optionsJSON.sendAlert.partialPrice.onFailedUpdatePartialPriced = this.getElementChecked(
+            'partialFailCheck'
           );
         }
 
