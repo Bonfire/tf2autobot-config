@@ -325,7 +325,7 @@
                   id="unusualNotInListCheck"
                   label="Unusual not in pricelist alert"
                   level="1"
-                  checked="true"
+                  value="checked"
                   tooltip="Send an alert when the bot receives Unusual that is not in the pricelist - Enabled only if you set pricelist.autoAddInvalidUnusual.enable to false."
                 />
               </div>
