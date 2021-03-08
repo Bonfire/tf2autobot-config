@@ -317,6 +317,17 @@
                   value="checked"
                   tooltip="Send an alert when the bot failed to update the prices for previously partially updated prices."
                 />
+                <SectionSubHeading
+                  title="Unusual Not In Pricelist Alert Settings"
+                  level="1"
+                />
+                <Checkbox
+                  id="unusualNotInListCheck"
+                  label="Unusual not in pricelist alert"
+                  level="1"
+                  value="checked"
+                  tooltip="Send an alert when the bot receives Unusual that is not in the pricelist - Enabled only if you set pricelist.autoAddInvalidUnusual.enable to false."
+                />
               </div>
               <SectionHeading
                 title="Pricelist Settings"
@@ -334,6 +345,11 @@
                   step="21600"
                   value="604800"
                   tooltip="Default value is 7 days. Minimum you can set here is only 1 day (86400 seconds). Please read the wiki for more information on this config item."
+                />
+                <Input
+                  id="partialExcludeInput"
+                  label="Exclude SKUs from partial price updates"
+                  tooltip="By default, this value is an empty string, but Mann Co. Supply Crate Key will always excluded."
                 />
                 <Checkbox
                   id="filterCantAffordCheck"
@@ -1397,6 +1413,10 @@ export default {
           optionsJSON.sendAlert.partialPrice.onFailedUpdatePartialPriced = this.getElementChecked(
             'partialFailCheck'
           );
+
+          optionsJSON.sendAlert.receivedUnusualNotInPricelist = this.getElementChecked(
+            'unusualNotInListCheck'
+          );
         }
 
         // Pricelist Settings / pricelist
@@ -1407,6 +1427,10 @@ export default {
         optionsJSON.pricelist.partialPriceUpdate.thresholdInSeconds = this.getElementIntValue(
           'pricelistPartialSecs'
         );
+        optionsJSON.pricelist.partialPriceUpdate.excludeSKU = this.getStringArray(
+          'partialExcludeInput'
+        );
+
         optionsJSON.pricelist.filterCantAfford.enable = this.getElementChecked(
           'filterCantAffordCheck'
         );
