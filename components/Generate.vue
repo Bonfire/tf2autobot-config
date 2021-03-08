@@ -325,6 +325,7 @@
                   id="unusualNotInListCheck"
                   label="Unusual not in pricelist alert"
                   level="1"
+                  checked="true"
                   tooltip="Send an alert when the bot receives Unusual that is not in the pricelist - Enabled only if you set pricelist.autoAddInvalidUnusual.enable to false."
                 />
               </div>
@@ -369,7 +370,6 @@
                 <Checkbox
                   id="addInvalidUnuCheck"
                   label="Auto-add invalid unusual items"
-                  value="checked"
                   tooltip="If set to true, any accepted Unusual bought from Generic Unusual Buy Orders will automatically be added to the pricelist (if the price from prices.tf is available)."
                 />
                 <Checkbox
