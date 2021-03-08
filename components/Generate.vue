@@ -325,7 +325,6 @@
                   id="unusualNotInListCheck"
                   label="Unusual not in pricelist alert"
                   level="1"
-                  value="checked"
                   tooltip="Send an alert when the bot receives Unusual that is not in the pricelist - Enabled only if you set pricelist.autoAddInvalidUnusual.enable to false."
                 />
               </div>
@@ -366,6 +365,12 @@
                   label="Auto-add invalid items"
                   value="checked"
                   tooltip="If set to false, any accepted invalid items will NOT be automatically added to the pricelist."
+                />
+                <Checkbox
+                  id="addInvalidUnuCheck"
+                  label="Auto-add invalid unusual items"
+                  value="checked"
+                  tooltip="If set to true, any accepted Unusual bought from Generic Unusual Buy Orders will automatically be added to the pricelist (if the price from prices.tf is available)."
                 />
                 <Checkbox
                   id="addPaintedItemsCheck"
@@ -434,6 +439,11 @@
                   id="showPureEmojiCheck"
                   label="Show pure using emojis in trade summary"
                   tooltip="Set to true if you want keys, refined, reclaimed, and scrap to be shown as emojis instead of text."
+                />
+                <Checkbox
+                  id="showProperNameCheck"
+                  label="Show proper item names in trade summary"
+                  tooltip="Set to true if you want full item names to be shown, and include 'The' where applicable."
                 />
               </div>
               <SectionHeading
@@ -1440,6 +1450,9 @@ export default {
         optionsJSON.pricelist.autoAddInvalidItems.enable = this.getElementChecked(
           'addInvalidItemsCheck'
         );
+        optionsJSON.pricelist.autoAddInvalidUnusual.enable = this.getElementChecked(
+          'addInvalidUnuCheck'
+        );
         optionsJSON.pricelist.autoAddPaintedItems.enable = this.getElementChecked(
           'addPaintedItemsCheck'
         );
@@ -1475,6 +1488,9 @@ export default {
         );
         optionsJSON.tradeSummary.showPureInEmoji = this.getElementChecked(
           'showPureEmojiCheck'
+        );
+        optionsJSON.tradeSummary.showProperName = this.getElementChecked(
+          'showProperNameCheck'
         );
 
         // High-Value Item Settings / highValue
