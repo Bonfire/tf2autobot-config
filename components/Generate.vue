@@ -698,7 +698,7 @@
                   tooltip='If set to true, the bot will make adjustments to the price of Keys when selling or buying. For example, if the current Keys price is "10 refined", the bot will take "10 refined" and add .value when buying, and subtract .value when selling. This is done in an effort to quickly buy and sell Keys using Autokeys when in a pinch by paying more for Keys and selling Keys for less. This is not possible to do when key banking (autokeys.banking.enable set to true).'
                 />
                 <Numeric
-                  id="autokeysMaxRefNumeric"
+                  id="autokeysScrapAdjustMaxRefNumeric"
                   label="Maximum amount of scrap to adjust by"
                   level="2"
                   value="1"
@@ -1621,7 +1621,7 @@ export default {
             'autokeysScrapAdjustCheck'
           );
           optionsJSON.autokeys.scrapAdjustment.value = this.getElementIntValue(
-            'autokeysMaxRefNumeric'
+            'autokeysScrapAdjustMaxRefNumeric'
           );
           optionsJSON.autokeys.accept.understock = this.getElementChecked(
             'autokeysUnderCheck'
