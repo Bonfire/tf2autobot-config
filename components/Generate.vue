@@ -1216,7 +1216,7 @@
                   label="Show trade partner quick links on new messages"
                   level="1"
                   value="checked"
-                  tooltip="Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages."
+                  tooltip="Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamRep pages."
                 />
                 <SectionSubHeading title="Price Update Settings" />
                 <Checkbox
@@ -1229,6 +1229,12 @@
                   id="priceUpdateStockCheck"
                   label="Enable discord webhook price updates only for items in stock"
                   tooltip="Set to true if you want your bot to show price changes only for items that are in stock."
+                />
+                <Checkbox
+                  id="priceUpdateShowFailedToUpdate"
+                  label="Enable discord webhook messages for when the bot fails to send a price update"
+                  value="checked"
+                  tooltip="Set to false if you don't want your bot to show any error while updating prices."
                 />
                 <Input
                   id="updateURLInput"
@@ -1892,6 +1898,9 @@ export default {
         if (optionsJSON.discordWebhook.priceUpdate.enable) {
           optionsJSON.discordWebhook.priceUpdate.showOnlyInStock = this.getElementChecked(
             'priceUpdateStockCheck'
+          );
+          optionsJSON.discordWebhook.priceUpdate.showFailedToUpdate = this.getElementChecked(
+            'priceUpdateShowFailedToUpdate'
           );
           optionsJSON.discordWebhook.priceUpdate.url = this.getElementValue(
             'updateURLInput'

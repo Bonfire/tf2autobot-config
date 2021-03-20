@@ -379,6 +379,7 @@
     "priceUpdate": {
       "enable": true,
       "showOnlyInStock": false,
+      "showFailedToUpdate": true,
       "url": "",
       "note": ""
     },
@@ -553,6 +554,7 @@
     },
     "message": {
       "enable": true,
+      "showOwnerName": true,
       "customReply": {
         "disabled": "",
         "wrongSyntax": "",
