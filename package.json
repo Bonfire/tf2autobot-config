@@ -9,7 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
+    "core-js": "^3.13.0",
     "hint.css": "^2.6.0",
     "nuxt": "^2.14.12",
     "popper": "^1.0.1",
