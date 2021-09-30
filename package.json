@@ -16,7 +16,7 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "@nuxtjs/svg": "^0.1.12",
+    "@nuxtjs/svg": "^0.3.0",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
