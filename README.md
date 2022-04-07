@@ -5,9 +5,8 @@ _A simple config generator for [TF2Autobot](https://github.com/TF2Autobot/tf2aut
 [Live Site](https://bonfire.github.io/tf2autobot-config/) • [Issues](https://github.com/Bonfire/tf2autobot-config/issues)
 
 If this tool helped you out, please feel free to support me by doing the any of the following: 
-* Become a [⭐Stargazer⭐](https://github.com/Bonfire/tf2autobot-config/stargazers)
-
-* <a href="https://www.buymeacoffee.com/bonf" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+- Become a [⭐Stargazer⭐](https://github.com/Bonfire/tf2autobot-config/stargazers)
+- Become a [❤️Sponsor❤️](https://github.com/sponsors/Bonfire)
 
 ## About
 
